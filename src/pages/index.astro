@@ -1,12 +1,64 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Footer from '../components/Footer.astro';
 
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev">
-	<main class="grow">
-
-	</main>
+	<div class="flex gap-8 leading-loose">
+		<section class="hero max-w-prose text-balance ">
+			<h1 class="text-4xl leading-normal mb-2">
+				I'm Alvar Sirlin, <br/>
+				a Front End Web Developer 
+			</h1>
+			<p>
+				with 15+ years of experience.
+			</p>
+			<p>
+				I specialize in responsive web design, development and custom themes for WordPress and Shopify.
+			</p>
+		</section>
+		<nav class="mt-16">
+			<ul>
+				<li><a href="/case-studies">CASE STUDIES</a></li>
+				<li><a href="/bio">BIO</a></li>
+				<li><a href="/contact">CONTACT</a></li>
+			</ul>
+		</nav>
+	</div>
 </Layout>
-<Footer />
+
+<style>	
+
+nav a::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	border-radius: 4px;
+	background-color: currentColor;
+	bottom: -10px;
+	left: 0;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform .3s ease-in-out;
+}
+
+nav a:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+nav a {
+	font-weight: 600;
+	font-size: 24px;
+	position: relative;
+}
+	nav li:nth-child(1) a {
+		color: var(--red);
+	}
+	nav li:nth-child(2) a {
+		color: var(--blue);
+	}
+	nav li:nth-child(3) a {
+		color: var(--yellow);
+	}
+</style>
