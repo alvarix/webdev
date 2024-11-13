@@ -24,14 +24,7 @@ const { title } = Astro.props;
 		<ViewTransitions />
 	</head>
 	<body class="flex flex-col min-h-screen">
-		<header class="flex">
-			<div>
-				Alvar Sirlin <span>Front End Developer</span>
-			</div>
-			<div>
-				
-			</div>
-		</header>
+
 		<main class="grow control" transition:animate="slide">
 			<slot />
 		</main>
@@ -40,10 +33,23 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		--red: #FF0000;
-		--blue: #00A3FF;
-		--yellow: #C8B447;
+		--color-case-studies: #FF0000;
+		--color-bio: #00A3FF;
+		--color-contact: #C8B447;
 	}
+
+	.color-bio {
+		color: var(--color-bio);
+	}
+
+	.color-case-studies {
+		color: var(--color-case-studies);
+	}
+
+	.color-contact {
+		color: var(--color-contact);
+	}
+
 	html {
 		font-family: Lato, system-ui, sans-serif;
 		color-scheme: light dark;
@@ -51,29 +57,29 @@ const { title } = Astro.props;
 	}
 
     body:has(#bio) {
-        background-color: var(--blue);
+        background-color: var(--color-bio);
     }
 
     body:has(#cs) {
-        background-color: var(--red);
+        background-color: var(--color-case-studies);
     }
 
     body:has(#contact) {
-        background-color: var(--yellow);
+        background-color: var(--color-contact);
     }
-
-
 
 	h3 {
 		font-size: 32px;
 		font-weight: bold;
 	}
+
 	.control {
 		max-width: 1270px ;
 		width: 80%;
 		margin: auto;
 		padding: 50px 0;
 	}
+
 	code {
 		font-family:
 			Menlo,
