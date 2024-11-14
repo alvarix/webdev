@@ -1,26 +1,29 @@
 ---
 
 interface Props {
-	section: string;
+	section?: string;
 }
 
 const isHomepage = Astro.url.pathname === '/';
 
 const { section } = Astro.props;
-const sectionSlug = toKebabCase(section);
-const sectionColor = `color-${sectionSlug}`;
-function toKebabCase(input) {
-  return input.toLowerCase().replace(/\s+/g, '-');
-}
+const sectionColor = `color-${section}`;
+
 ---
 {!isHomepage && 
+// does this need to be inline?
+// I was getting errors on index that section wasnt defined
+<script define:vars={{ section }}>
+    const sectionName = section.replace(/-/g, ' ');
+    document.getElementById('section-name').textContent = sectionName;
+</script>
+
 <header>
-    <div class="flex control py-2  {visible && <p>Show me!</p>}">
+    <div class="header flex control py-2  {visible && <p>Show me!</p>}">
         <div>
             <a href='/'>Alvar Sirlin <span class="ml-2 role">Front End Developer</span></a>
         </div>
-        <div class:list={['ml-8', 'section', sectionColor]}>
-            { section } 
+        <div id='section-name' class:list={['ml-8', 'section-name', sectionColor]}>
         </div>
     </div>
 </header>

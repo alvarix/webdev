@@ -6,8 +6,9 @@ import '../styles/global.css';
 
 interface Props {
 	title: string;
+	section: string;
 }
-const { title } = Astro.props;
+const { title, section } = Astro.props;
 
 const getPageName = () => {
   return Astro.params?.slug || Astro.url.pathname.split('/').filter(Boolean).pop();
@@ -34,7 +35,8 @@ const pageName = getPageName();
 	</head>
 	<body class="flex flex-col min-h-screen">
 
-		<Header section='bio'/>
+		<Header section={section}/>
+
 		<main class="grow control" transition:animate="slide">
 			<slot />
 		</main>

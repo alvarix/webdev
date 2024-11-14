@@ -8,6 +8,10 @@
 		color: var(--color-bio);
 	}
 
+	.header .section-name {
+		text-transform: capitalize;
+	}
+
 	.color-case-studies {
 		color: var(--color-case-studies);
 	}
@@ -26,7 +30,7 @@
         background-color: var(--color-bio);
     }
 
-    body:has(#cs) {
+    body:has(#case-studies) {
         background-color: var(--color-case-studies);
     }
 
