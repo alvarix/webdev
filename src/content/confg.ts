@@ -8,6 +8,7 @@ const caseStudiesCollection = defineCollection({
     order: z.number(), 
     tags: z.array(),
     color: z.string(),
+    draft: z.boolean(),
   }),
 });
 

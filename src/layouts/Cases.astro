@@ -1,3 +1,10 @@
-
+---
+const { frontmatter } = Astro.props;
+---
 <Header/>
+
+{frontmatter.tags.map((tag) => (<Tag tag={tag} />))}
+
+<p>Written on: {frontmatter.date}</p>
+
 <Footer/>
