@@ -1,12 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
+const posts = await getCollection('case-studies');
+posts.sort((a, b) => a.data.order - b.data.order);
 
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
 <section id="case-studies">
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, natus quo in quae minima excepturi quisquam ea soluta asperiores beatae harum omnis blanditiis perspiciatis repudiandae quibusdam optio. Quibusdam, ratione labore!
+    <ul>
+        {posts.map(post => (
+          <li key={post.slug}>
+            <h2><a href={`/blog/${post.slug}`}>
+              {post.data.title}
+            </a></h2>
+            <p>{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
+
 </section>
 </Layout>
 
