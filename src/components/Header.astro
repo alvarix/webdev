@@ -18,7 +18,7 @@ const sectionColor = `color-${section}`;
     document.getElementById('section-name').textContent = sectionName;
 </script>
 
-<header>
+<div id='header'>
     <div class="header flex control py-2  {visible && <p>Show me!</p>}">
         <div>
             <a href='/'>Alvar Sirlin <span class="ml-2 role">Front End Developer</span></a>
@@ -26,12 +26,12 @@ const sectionColor = `color-${section}`;
         <div id='section-name' class:list={['ml-8', 'section-name', sectionColor]}>
         </div>
     </div>
-</header>
+</div>
 }
 <style define:vars={{ sectionColor }}
 >
 
-    header  {
+    #header  {
         background-color: #fff;
     }
     
