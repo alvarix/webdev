@@ -4,6 +4,8 @@ interface Props {
 	section: string;
 }
 
+const isHomepage = Astro.url.pathname === '/';
+
 const { section } = Astro.props;
 const sectionSlug = toKebabCase(section);
 const sectionColor = `color-${sectionSlug}`;
@@ -11,18 +13,18 @@ function toKebabCase(input) {
   return input.toLowerCase().replace(/\s+/g, '-');
 }
 ---
-
-<header >
-    <div class="flex control py-2">
+{!isHomepage && 
+<header>
+    <div class="flex control py-2  {visible && <p>Show me!</p>}">
         <div>
-            Alvar Sirlin <span class="ml-2 role">Front End Developer</span>
+            <a href='/'>Alvar Sirlin <span class="ml-2 role">Front End Developer</span></a>
         </div>
         <div class:list={['ml-8', 'section', sectionColor]}>
             { section } 
         </div>
     </div>
 </header>
-
+}
 <style define:vars={{ sectionColor }}
 >
 
