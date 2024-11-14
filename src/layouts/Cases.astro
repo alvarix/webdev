@@ -1,9 +1,13 @@
 ---
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 const { frontmatter } = Astro.props;
+//{frontmatter.tags.map((tag) => (<Tag tag={tag} />))}
 ---
 <Header/>
 
-{frontmatter.tags.map((tag) => (<Tag tag={tag} />))}
 
 <p>Written on: {frontmatter.date}</p>
 

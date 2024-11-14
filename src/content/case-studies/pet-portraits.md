@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/Cases.astro
+layout: ../../layouts/Cases.astro
 title: "Pet Portraits"
 description: "Portfolio WordPress Theme using Blocks"
 tags: ["wordpress","ajax","javascript","blocks"]
