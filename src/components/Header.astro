@@ -15,7 +15,9 @@ const sectionColor = `color-${section}`;
 // I was getting errors on index that section wasnt defined
 <script define:vars={{ section }}>
     const sectionName = section.replace(/-/g, ' ');
-    document.getElementById('section-name').textContent = sectionName;
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('section-name').textContent = sectionName;
+    })
 </script>
 
 <div id='header'>
