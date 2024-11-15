@@ -7,8 +7,10 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	section: string;
+	bgColor?: string
 }
-const { title, section } = Astro.props;
+
+const { title, section, bgColor } = Astro.props;
 
 const getPageName = () => {
   return Astro.params?.slug || Astro.url.pathname.split('/').filter(Boolean).pop();
@@ -37,16 +39,15 @@ const pageName = getPageName();
 
 		<Header section={section}/>
 
-		<main class="grow control" transition:animate="slide">
+		<main class="grow " transition:animate="slide">
 			<slot />
 		</main>
 		<Footer />
 
 	</body>
 </html>
-
-
-<style>
-
-
+<style define:vars={{bgColor}}>
+    :global(.bgcolor) {
+        background-color: var(--bgColor);
+    }
 </style>

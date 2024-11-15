@@ -1,8 +1,13 @@
 import { defineCollection, z } from 'astro:content';
 
 const caseStudiesCollection = defineCollection({
-  schema: z.object({
+  schema: ({ image }) =>
+  z.object({
+    cover: image().refine((img) => img.width >= 1080, {
+      message: "Cover image must be at least 1080 pixels wide!",
+    }),
     title: z.string(),
+    coverAlt: z.string(),
     date: z.date(),
     description: z.string(),
     order: z.number(), 
@@ -13,5 +18,5 @@ const caseStudiesCollection = defineCollection({
 });
 
 export const collections = {
-  posts: caseStudiesCollection,
+  casestudies: caseStudiesCollection,
 };

@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 // Example: Filter out content entries with `draft: true` only when building for production
-const posts = await getCollection('case-studies', ({ data }) => {
+const posts = await getCollection('casestudies', ({ data }) => {
   return import.meta.env.PROD ? data.draft !== true : true;
 });
 
@@ -12,11 +12,11 @@ posts.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
-<section id="case-studies">
+<section id="case-studies" class="control">
     <ul>
         {posts.map(post => (
           <li key={post.slug}>
-            <h2><a class='effect' href={`/case-studies/${post.slug}`}>
+            <h2><a class='effect' href={`/casestudies/${post.slug}`}>
               {post.data.title}
             </a></h2>
             <p>{post.data.description}</p>

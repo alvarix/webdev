@@ -1,10 +1,12 @@
 ---
-layout: ../../layouts/Cases.astro
+layout: ../../layouts/Casestudy.astro
 title: "Calm Store"
+cover: "./hero-calm.jpg"
+coverAlt: "Image of storefront hero"
 description: "Portfolio WordPress Theme using Blocks"
 tags: ["wordpress","ajax","javascript","blocks"]
 date: "11 Nov 2024"
-color: "#ccc"
+color: "#EFEFEF"
 order: 1
 draft: true
 ---

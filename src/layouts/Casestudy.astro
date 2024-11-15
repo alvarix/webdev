@@ -1,0 +1,29 @@
+---
+
+const { frontmatter } = Astro.props;
+
+
+
+---
+
+<section id="case-study" >
+    <div class="control">
+        <h1>{frontmatter.title}</h1>
+        
+        <ul class='tags flex gap-2'>
+            {frontmatter.tags.map((tag) => (<li>{tag}</li> ))}
+        </ul>
+        <img src={frontmatter.cover} />
+
+
+        <!-- <p>Written on: {frontmatter.date}</p>-->
+    </div>
+    
+
+    <div class="bgcolor">
+        <div class="control">
+            <slot />
+        </div>
+    </div>
+</section>
+
