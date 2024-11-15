@@ -16,7 +16,7 @@ posts.sort((a, b) => a.data.order - b.data.order);
     <ul>
         {posts.map(post => (
           <li key={post.slug}>
-            <h2><a href={`/case-studies/${post.slug}`}>
+            <h2><a class='effect' href={`/case-studies/${post.slug}`}>
               {post.data.title}
             </a></h2>
             <p>{post.data.description}</p>
@@ -29,5 +29,15 @@ posts.sort((a, b) => a.data.order - b.data.order);
 
 
 <style>
+ li  {
+    color: #fff;
+    margin: 15px 0 30px;
+ }
 
+
+a {
+    font-size: 30px;
+    display: inline-block;
+    margin-bottom: 4px;
+ }
 </style>

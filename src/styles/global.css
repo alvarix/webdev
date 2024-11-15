@@ -1,8 +1,31 @@
 	:root {
-		--color-case-studies: #FF0000;
+		--color-case-studies: #FF3103;
 		--color-bio: #00A3FF;
 		--color-contact: #C8B447;
 	}
+
+
+a.effect::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	border-radius: 3px;
+	background-color: currentColor;
+	bottom: -2px;
+	left: 0;
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform .3s ease-in-out;
+}
+
+a.effect:hover::before {
+	transform-origin: left;
+	transform: scaleX(1);
+}
+a.effect {
+	position: relative;
+}
 
 	.color-bio {
 		color: var(--color-bio);

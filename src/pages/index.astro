@@ -4,7 +4,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev">
-	<div class="flex gap-8 leading-loose">
+	<div class="flex flex-col md:flex-row gap-8 leading-loose ">
 		<section class="hero max-w-prose text-balance ">
 			<h1 class="text-4xl leading-normal mb-2">
 				I'm Alvar Sirlin, <br/>
@@ -17,11 +17,11 @@ import Layout from '../layouts/Layout.astro';
 				I specialize in responsive web design, development and custom themes for WordPress and Shopify.
 			</p>
 		</section>
-		<nav class="mt-16">
+		<nav class="md:mt-16">
 			<ul>
-				<li><a href="/case-studies">CASE STUDIES</a></li>
-				<li><a href="/bio">BIO</a></li>
-				<li><a href="/contact">CONTACT</a></li>
+				<li><a class="effect" href="/case-studies">CASE STUDIES</a></li>
+				<li><a class="effect" href="/bio">BIO</a></li>
+				<li><a class="effect" href="/contact">CONTACT</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -29,28 +29,15 @@ import Layout from '../layouts/Layout.astro';
 
 <style>	
 
-nav a::before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 4px;
-	border-radius: 4px;
-	background-color: currentColor;
-	bottom: -10px;
-	left: 0;
-	transform-origin: right;
-	transform: scaleX(0);
-	transition: transform .3s ease-in-out;
-}
-
-nav a:hover::before {
-	transform-origin: left;
-	transform: scaleX(1);
-}
 nav a {
 	font-weight: 600;
 	font-size: 24px;
-	position: relative;
+}
+
+nav a.effect::before {
+	bottom: -10px;
+	height: 4px;
+	border-radius: 4px;
 }
 	nav li:nth-child(1) a {
 		color: var(--color-case-studies);
