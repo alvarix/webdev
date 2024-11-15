@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 // 1. Generate a new path for every collection entry
@@ -14,8 +15,10 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 const bgColor = entry.data.color;
+const cover = entry.data.cover;
 ---
 <!-- <h1>{entry.data.title}</h1> -->
+<Image src={cover} alt="" />
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies" bgColor={bgColor}>
   <Content />
