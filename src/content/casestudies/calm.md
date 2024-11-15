@@ -1,10 +1,10 @@
 ---
-layout: ../../layouts/Casestudy.astro
 title: "Calm Store"
 cover: ../../assets/hero-calm.jpg
 coverAlt: "Image of storefront hero"
 description: "Portfolio WordPress Theme using Blocks"
 tags: [wordpress,ajax,javascript,blocks]
+color: '#e8e8e8'
 ---
 
 

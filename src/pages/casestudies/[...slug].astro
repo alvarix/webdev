@@ -17,9 +17,31 @@ const { Content } = await entry.render();
 const bgColor = entry.data.color;
 const cover = entry.data.cover;
 ---
-<!-- <h1>{entry.data.title}</h1> -->
-<Image src={cover} alt="" />
 
-<Layout title="Alvar Sirlin, Front End Dev" section="case-studies" bgColor={bgColor}>
-  <Content />
+<Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
+    <div class="control">
+        <h1>{entry.data.title}</h1>
+        
+        {entry.data.tags && (
+        <ul class='tags flex gap-2'>
+            {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
+        </ul>
+        )}
+
+        
+        <!-- <p>Written on: {frontmatter.date}</p>-->
+    </div>
+  <Image src={cover} alt="" />
+  <div class="bgcolor">
+    <div class="control">
+      <Content />
+    </div>
+  </div>
 </Layout>
+
+<style define:vars={{bgColor}}>
+  .bgcolor {
+    background-color: var(--bgColor);
+  }
+
+</style>

@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/Casestudy.astro
 title: "Calm Store"
 cover: ../assets/images/hero-calm.jpg
 coverAlt: "Image of storefront hero"
