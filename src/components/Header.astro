@@ -1,4 +1,6 @@
 ---
+import Hamburger from './Hamburger.astro';
+
 
 interface Props {
 	section?: string;
@@ -27,6 +29,9 @@ const sectionColor = `color-${section}`;
         </div>
         <div id='section-name' class:list={['ml-8', 'section-name', sectionColor]}>
              <!-- JS -->   
+        </div>
+        <div class="nav grow flex justify-end relative">
+            <Hamburger section={section} />
         </div>
     </div>
 </div>

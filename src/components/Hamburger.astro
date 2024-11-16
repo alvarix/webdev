@@ -1,0 +1,112 @@
+---
+interface Props {
+	section?: string;
+}
+
+let isCs, isBio, isContact;
+
+const {section} = Astro.props;
+switch (section) {
+    case 'case-studies':
+        isCs = true;
+        break;
+    case 'bio':
+        isBio = true;
+        break;
+    case 'contact':
+        isContact = true;
+        break;
+}
+
+
+---
+<div class="hamburger self-end">
+    <span class:list={[ 'case-studies',{active: isCs}] }></span>
+    <span class:list={[ 'bio',{active: isBio}] }></span>
+    <span class:list={[ 'contact',{active: isContact}] }></span>
+</div>
+
+<ul class="nav-links absolute top-8 right-0 z-20">
+    <li><a href="">Home</a></li>
+    <li><a href="">Case Studies</a></li>
+    <li><a href="">Bio</a></li>
+    <li><a href="">Contact</a></li>
+</ul>
+<style>
+
+.hamburger .case-studies.active {
+    background-color: var(--color-case-studies);
+}
+
+.hamburger .bio.active {
+    background-color: var(--color-bio);
+}
+
+.hamburger .contact.active {
+    background-color: var(--color-contact);
+}
+
+
+
+
+
+.hamburger {
+	cursor: pointer;
+  }
+  
+  .hamburger span {
+	display: block;
+	width: 25px;
+	height: 3px;
+	margin-bottom: 3px;
+	background-color: #000;
+  }
+  
+  .nav-links {
+	width: 100%;
+	top: 5rem;
+	left: 48px;
+	background-color: #ff9776;
+	display: none;
+	margin: 0;
+  }
+  
+  .nav-links a {
+	display: block;
+	text-align: center;
+	padding: 10px 0;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+  }
+  
+  .nav-links a:hover, a:focus {
+	background-color: ;
+  }
+  
+  .expanded {
+	display: unset;
+  }
+ 
+
+
+  /*
+  @media screen and (min-width: 636px) {
+	.nav-links {
+	  margin-left: 5em;
+	  display: block;
+	  position: static;
+	  width: auto;
+	  background: none;
+	}
+  
+	.nav-links a {
+	  display: inline-block;
+	  padding: 15px 20px;
+	}
+  
+
+  }
+*/
+</style>
