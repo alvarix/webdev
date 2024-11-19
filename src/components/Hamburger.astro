@@ -20,6 +20,26 @@ switch (section) {
 
 
 ---
+
+<script>
+document.addEventListener('astro:page-load', () => {
+  /**
+   * Toggles the 'expanded' class on the navigation menu when the hamburger icon is clicked.
+   */
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (hamburger && navLinks) { // Check if elements exist
+    hamburger.addEventListener('click', () => {
+      // Toggle the 'expanded' class to open/close the menu
+      navLinks.classList.toggle('expanded');
+    });
+  } else {
+    console.warn('Hamburger or nav-links element not found in the DOM.');
+  }
+});
+</script>
+
 <div class="hamburger self-end">
     <span class:list={[ 'case-studies',{active: isCs}] }></span>
     <span class:list={[ 'bio',{active: isBio}] }></span>
@@ -41,7 +61,6 @@ switch (section) {
 .hamburger .bio.active {
     background-color: var(--color-bio);
 }
-
 .hamburger .contact.active {
     background-color: var(--color-contact);
 }
