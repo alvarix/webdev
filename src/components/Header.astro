@@ -8,10 +8,9 @@ interface Props {
 
 const isHomepage = Astro.url.pathname === '/';
 
-const { section } = Astro.props;
+const { section= 'default' } = Astro.props;
 const sectionColor = `color-${section}`;
 const sectionName = section.replace(/-/g, ' ');
-
 ---
 {!isHomepage && 
 <div id='header'>
