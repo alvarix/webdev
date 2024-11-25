@@ -19,11 +19,11 @@ const cover = entry.data.cover;
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
-    <div class="control">
+    <div class="control prose">
         <h1>{entry.data.title}</h1>
         
         {entry.data.tags && (
-        <ul class='tags flex gap-2'>
+        <ul class='tags flex gap-2 list-none pl-0'>
             {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
         </ul>
         )}
@@ -33,7 +33,7 @@ const cover = entry.data.cover;
     </div>
   <Image src={cover} alt="" />
   <div class="bgcolor">
-    <div class="control prose post ">
+    <div class="control prose">
       <Content />
     </div>
   </div>
@@ -42,10 +42,6 @@ const cover = entry.data.cover;
 <style define:vars={{bgColor}}>
   .bgcolor {
     background-color: var(--bgColor);
-  }
-
-  .post {
-    
   }
 
 </style>
