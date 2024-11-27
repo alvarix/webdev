@@ -16,9 +16,11 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 const bgColor = entry.data.color;
 const cover = entry.data.cover;
+
+
 ---
 
-<Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
+<Layout title="Alvar Sirlin, Front End Dev" bgColor={bgColor} section="case-studies">
     <div class="control prose">
         <h1>{entry.data.title}</h1>
         
@@ -31,7 +33,7 @@ const cover = entry.data.cover;
         
         <!-- <p>Written on: {frontmatter.date}</p>-->
     </div>
-  <Image src={cover} alt="" />
+  {cover && <Image if src={cover} alt="" />}
   <div class="bgcolor">
     <div class="control prose">
       <Content />
@@ -40,8 +42,13 @@ const cover = entry.data.cover;
 </Layout>
 
 <style define:vars={{bgColor}}>
+  
   .bgcolor {
     background-color: var(--bgColor);
+  }
+
+ ::marker {
+    color: #000 !important
   }
 
 </style>

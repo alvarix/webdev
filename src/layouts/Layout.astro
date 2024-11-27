@@ -7,15 +7,15 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	section: string;
+	bgColor: string;
 }
 
-const { title, section  } = Astro.props;
+const { title, section, bgColor  } = Astro.props;
 
 const getPageName = () => {
   return Astro.params?.slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 };
 
-const pageName = getPageName();
 
 ---
 
@@ -23,7 +23,7 @@ const pageName = getPageName();
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content="Alvar Sirlin" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -34,10 +34,9 @@ const pageName = getPageName();
 		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 		<ViewTransitions />
 	</head>
-	<body class="flex flex-col min-h-screen">
+	<body class="flex flex-col min-h-screen ">
 
 		<Header section={section}/>
-
 		<main class="grow " transition:animate="slide">
 			<slot />
 		</main>
@@ -46,3 +45,9 @@ const pageName = getPageName();
 
 	</body>
 </html>
+
+<style define:vars={{bgColor}}>
+  body {
+    background-color: var(--bgColor);
+  }
+</style>
