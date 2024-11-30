@@ -48,18 +48,20 @@ a.effect {
 	html {
 		font-family: Lato, system-ui, sans-serif;
 		color-scheme: light dark;
-
 	}
 
-    body:has(#bio) {
+    Xbody:has(#bio),
+    #bio {
         background-color: var(--color-bio);
     }
 
-    body:has(#case-studies) {
+    Xbody:has(#case-studies),
+    #case-studies {
         background-color: var(--color-case-studies);
     }
 
-    body:has(#contact) {
+    Xbody:has(#contact),
+    #contact {
         background-color: var(--color-contact);
     }
 

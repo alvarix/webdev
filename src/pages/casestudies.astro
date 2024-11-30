@@ -12,8 +12,10 @@ posts.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
-<section id="case-studies" class="control">
-    <ul>
+<section id="case-studies"  transition:name="cs" >
+    <div class="control">
+
+      <ul>
         {posts.map(post => (
           <li key={post.slug}>
             <h2><a class='effect' href={`/casestudies/${post.slug}`}>
@@ -23,6 +25,7 @@ posts.sort((a, b) => a.data.order - b.data.order);
           </li>
         ))}
     </ul>
+  </div>
 
 </section>
 </Layout>

@@ -20,9 +20,9 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 		<nav class="md:mt-16">
 			<ul>
-				<li><a class="effect" href="/casestudies">CASE STUDIES</a></li>
-				<li><a class="effect" href="/bio">BIO</a></li>
-				<li><a class="effect" href="/contact">CONTACT</a></li>
+				<li><a class="xeffect" transition:name='cs' href="/casestudies">CASE STUDIES</a></li>
+				<li><a class="xeffect" transition:name='bio' href="/bio">BIO</a></li>
+				<li><a class="xeffect" transition:name='contact' href="/contact">CONTACT</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -36,6 +36,12 @@ nav a {
 	line-height: 1.25;
 	margin-bottom: 20px;
 	display: inline-block;
+
+	padding:40px;
+	border-radius: 20px;
+	background-color: aqua;
+	color:white;
+	width: 20rem;
 }
 nav a.effect::before {
 	bottom: -10px;
@@ -43,12 +49,15 @@ nav a.effect::before {
 	border-radius: 4px;
 }
 	nav li:nth-child(1) a {
-		color: var(--color-case-studies);
+		Xcolor: var(--color-case-studies);
+		background-color: var(--color-case-studies);
 	}
 	nav li:nth-child(2) a {
-		color: var(--color-bio);
+		Xcolor: var(--color-bio);
+		background-color: var(--color-bio);
 	}
 	nav li:nth-child(3) a {
-		color: var(--color-contact);
+		Xcolor: var(--color-contact);
+		background-color: var(--color-contact);
 	}
 </style>
