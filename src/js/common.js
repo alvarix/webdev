@@ -1,3 +1,22 @@
- const getPageName = () => {
-  return Astro.params?.slug || Astro.url.pathname.split('/').filter(Boolean).pop();
+window.addEventListener("load", () => 
+  setExternalLinks()
+);
+
+/**
+ * Adds `target="_blank"` to all external links on the page.
+ */
+const setExternalLinks = () => {
+  const anchorLinks = document.querySelectorAll("a");
+
+  anchorLinks.forEach((link) => {
+    const isExternal = 
+      link.host !== window.location.host && 
+      (link.protocol === "http:" || link.protocol === "https:");
+      
+    if (isExternal) {
+      link.setAttribute("target", "_blank");
+    }
+  });
 };
+
+
