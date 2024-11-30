@@ -34,30 +34,40 @@ nav a {
 	font-weight: 600;
 	font-size: 24px;
 	line-height: 1.25;
-	margin-bottom: 20px;
+	Xmargin-bottom: 20px;
 	display: inline-block;
 
-	padding:40px;
-	border-radius: 20px;
-	background-color: aqua;
-	color:white;
+	padding:27px 40px;
+	xborder-radius: 20px;
 	width: 20rem;
+    transition: all 220ms linear;
+
 }
 nav a.effect::before {
 	bottom: -10px;
 	height: 4px;
 	border-radius: 4px;
 }
-	nav li:nth-child(1) a {
-		Xcolor: var(--color-case-studies);
-		background-color: var(--color-case-studies);
+
+nav li:nth-child(1) a {
+	color: var(--color-case-studies);
+}
+nav li:nth-child(1) a:hover {
+	background-color: var(--color-case-studies);
+	color:white;
 	}
 	nav li:nth-child(2) a {
-		Xcolor: var(--color-bio);
+		color: var(--color-bio);
+	}
+	nav li:nth-child(2) a:hover {
 		background-color: var(--color-bio);
+	color:white;
 	}
 	nav li:nth-child(3) a {
-		Xcolor: var(--color-contact);
+		color: var(--color-contact);
+	}
+	nav li:nth-child(3) a:hover {
 		background-color: var(--color-contact);
+	color:white;
 	}
 </style>
