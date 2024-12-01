@@ -8,16 +8,20 @@ order: 9
 ---
 
 ## Using Bricks Builder to wrangle data
-I built this website for my longtime collaborator *Serendipity Creative* studio.  
+I built this website with my longtime collaborator *Serendipity Creative* studio.  
 
-I’m not a fan of WP builders - bloated, unperformant and often make more problems than they solve. But they now are often a requirement.  
-After evaluating a handful of contenders I was pleasantly surprised that Bricks has use for a developer as well as the WYSYWIGers.
+### Builders
+Like most devs I’m not a fan of WordPress builders, but for SC design studio it wass a requirement.
+Previously using and cursing Divi, we wanted to find a more modern solution.  
+After evaluating a handful of contenders I was surprised that Bricks has UI tools that can speed up advacned WordPress API work as well as layout. 
 
-With Bricks I was able to extend a **category archive** page into a tabbed layout of sub categories with a fraction of the coding.
+### Clever Queries built into Tabs component
+One example of where Bricks cut down development time:
+I extended a **category archive** page into a tabbed layout of sub categories as so:
  
-### Bricks Extras Pro Tabs component config
-Setting the Tab Item query type to *terms*, and Parent field as Bricks dynamic {term_id}.  
-For the subcategory query The Child field is set to {term_id} to output a list of sub terms to feed into the shortcode.
+- In the Query Module of Pro Tabs from Bricks Extras, set the **Tab Item** query type to *terms*
+  - Parent field as Bricks dynamic {term_id}
+- For the subcategory query **The Child** field is set to {term_id} to output a list of sub terms
 
 
 
