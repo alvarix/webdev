@@ -33,7 +33,7 @@ const cover = entry.data.cover;
         
         <!-- <p>Written on: {frontmatter.date}</p>-->
     </div>
-  {cover && <Image if src={cover} alt="" />}
+  {cover && <Image transition:name=`thumb-${entry.slug}` src={cover} alt="" />}
   <div class="bgcolor">
     <div class="control prose">
       <Content />

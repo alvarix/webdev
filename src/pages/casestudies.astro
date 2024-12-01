@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
 
 // Example: Filter out content entries with `draft: true` only when building for production
 const posts = await getCollection('casestudies', ({ data }) => {
@@ -12,16 +13,24 @@ posts.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="case-studies">
-<section id="case-studies"  transition:name="cs" >
+<section id="case-studies" transition:name="cs" >
     <div class="control">
 
       <ul>
         {posts.map(post => (
-          <li key={post.slug}>
+ 
+          <li key={post.slug} class="flex gap-4">
+            <div>
+              
             <h2><a class='effect' href={`/casestudies/${post.slug}`}>
               {post.data.title}
             </a></h2>
             <p>{post.data.description}</p>
+            </div>
+            <div>
+
+            {post.data.cover && <Image transition:name=`thumb-${post.slug}` class="thumb" src={post.data.cover} alt="" />}
+            </div>
           </li>
         ))}
     </ul>
@@ -32,15 +41,32 @@ posts.sort((a, b) => a.data.order - b.data.order);
 
 
 <style>
+  .thumb {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    Xright: 40%;
+    border-radius: 15px;
+    
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s linear;
+    
+  }
  li  {
     color: #fff;
     margin: 15px 0 30px;
  }
-
-
 a {
     font-size: 30px;
     display: inline-block;
     margin-bottom: 4px;
  }
+
+ li:has(a:hover) .thumb {
+  visibility: visible;
+  opacity: 1;
+ }
+
 </style>
