@@ -1,9 +1,12 @@
 	:root {
 		color-scheme: light only;
-
 		--color-case-studies: #FF3103;
+		--color-case-studies--light: #f3603f;
 		--color-bio: #00A3FF;
+		--color-bio--light: #51b8f3;
 		--color-contact: #C8B447;
+		--color-contact--light: #dec950;
+		--color-contact--lighter: #eedc77;
 	}
 
 
