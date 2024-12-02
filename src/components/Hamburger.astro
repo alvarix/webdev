@@ -29,16 +29,27 @@ document.addEventListener('astro:page-load', () => {
    */
   const hamburger = document.querySelector('.hamburger');
   const navLinks = document.querySelector('.nav-links');
+  const pageEl = document.querySelector('.page');
+  const pageBgColor = getComputedStyle(pageEl).backgroundColor;
 
   if (hamburger && navLinks) {
+
     // Open/close menu on hamburger click
     hamburger.addEventListener('click', () => {
+      pageEl.style.backgroundColor = 'white';
+
       if (!navLinks.classList.contains('expanded')) {
         navLinks.classList.add('fade-in');
         navLinks.classList.add('expanded');
+        hamburger.classList.add('is-open'); // Change to "X"
+
       } else {
+
+        pageEl.style.backgroundColor = pageBgColor;
         navLinks.classList.remove('fade-in');
         navLinks.classList.add('fade-out');
+        hamburger.classList.remove('is-open'); // Revert to hamburger
+
         setTimeout(() => {
           navLinks.classList.remove('expanded', 'fade-out');
         }, 300); // Match the CSS animation duration
@@ -48,6 +59,7 @@ document.addEventListener('astro:page-load', () => {
     // Close menu when clicking outside of it
     document.addEventListener('click', (event) => {
       if (!navLinks.contains(event.target) && !hamburger.contains(event.target) && navLinks.classList.contains('expanded')) {
+        pageEl.style.backgroundColor = pageBgColor;
         navLinks.classList.remove('fade-in');
         navLinks.classList.add('fade-out');
         setTimeout(() => {
@@ -59,6 +71,10 @@ document.addEventListener('astro:page-load', () => {
     console.warn('Hamburger or nav-links element not found in the DOM.');
   }
 });
+
+
+
+
 </script>
 
 <div class="hamburger self-end">
@@ -67,12 +83,15 @@ document.addEventListener('astro:page-load', () => {
     <span class:list={[ 'contact',{active: isContact}] }></span>
 </div>
 
-<ul class="nav-links absolute top-8 right-0 z-20">
-    <li><a href="/">Home</a></li>
-    <li><a class:list={[ 'case-studies',{active: isCs}] } href="/casestudies">Case Studies</a></li>
-    <li><a class:list={[ 'bio',{active: isBio}] } href="/bio">Bio</a></li>
-    <li><a class:list={[ 'contact',{active: isContact}] }  href="/contact">Contact</a></li>
-</ul>
+<nav class="nav-links z-20">
+
+  <ul class="mt-14">
+    <li><a class='control' href="/">Home</a></li>
+    <li><a class:list={['control', 'case-studies',{active: isCs}] } href="/casestudies">Case Studies</a></li>
+    <li><a class:list={[ 'control','bio',{active: isBio}] } href="/bio">Bio</a></li>
+    <li><a class:list={[ 'control','contact',{active: isContact}] }  href="/contact">Contact</a></li>
+  </ul>
+</nav>
 <style>
 
 .hamburger .case-studies.active {
@@ -89,44 +108,57 @@ document.addEventListener('astro:page-load', () => {
   }
   
   .hamburger span {
-	display: block;
-	width: 25px;
-	height: 3px;
-	margin-bottom: 3px;
-	background-color: #000;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: #000;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+
   }
+
+  .hamburger.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-open span:nth-child(3) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+
   .nav-links {
-	width: 14rem;
-	top: 5rem;
-	right: 48px;
-	background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-	display: none;
-	margin: 0;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 3.8rem;
+    max-width: 100%;
+    right: 0;
+    background-color: #fff;
+    xbox-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    display: none;
+    margin: 0;
   }
   
   .nav-links a {
-	display: block;
-	text-align: center;
-	padding: 10px 0;
-	text-decoration: none;
-	font-size: 1rem;
-	text-transform: uppercase;
+    display: block;
+    border-radius: 15px;
+    text-decoration: none;
+    Xtext-transform: uppercase;
   }
   
-  .nav-links a.active,
-  .nav-links a:hover, a:focus {
-	background-color: #f2f2f2;
-  }
+
   .expanded {
-	display: unset;
+    display: unset;
   }
  
-
   .nav-links {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none; /* Prevent interaction when hidden */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none; /* Prevent interaction when hidden */
 }
 
 .nav-links.expanded {
@@ -140,6 +172,7 @@ document.addEventListener('astro:page-load', () => {
 .nav-links.fade-out {
   animation: fadeOut 0.3s ease forwards;
 }
+
 
 @keyframes fadeIn {
   from {

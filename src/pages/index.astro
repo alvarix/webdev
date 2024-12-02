@@ -5,7 +5,7 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Alvar Sirlin, Front End Dev">
 	
-	<div class="flex flex-col md:flex-row  gap-8 leading-loose control">
+	<div class="page flex flex-col md:flex-row  gap-8 leading-loose control">
 		<section class="hero max-w-prose text-balance ">
 			<h1 class="text-4xl leading-normal mb-2">
 				I'm Alvar Sirlin, <br/>
@@ -18,9 +18,10 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 		<nav class="md:mt-16">
 			<ul>
-				<li><a class="xeffect" transition:name='cs' href="/casestudies">CASE STUDIES</a></li>
-				<li><a class="xeffect" transition:name='bio' href="/bio">BIO</a></li>
-				<li><a class="xeffect" transition:name='contact' href="/contact">CONTACT</a></li>
+				<li><a class="hidden" href="/">Home</a></li>
+				<li><a class="xeffect" transition:name='cs' href="/casestudies">Case Studies</a></li>
+				<li><a class="xeffect" transition:name='bio' href="/bio">Bio</a></li>
+				<li><a class="xeffect" transition:name='contact' href="/contact">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -29,42 +30,23 @@ import Layout from '../layouts/Layout.astro';
 <style>	
 
 nav a {
-	font-weight: 700;
-	font-size: 24px;
+
 	line-height: 1.25;
 	Xmargin-bottom: 20px;
 	display: inline-block;
 
-	padding:27px 40px;
 	border-radius: 15px;
 	width: 20rem;
     transition: all 220ms linear;
 
 }
+
+
 nav a.effect::before {
 	bottom: -10px;
 	height: 4px;
 	border-radius: 4px;
 }
 
-nav li:nth-child(1) a {
-	color: var(--color-case-studies);
-}
-nav li:nth-child(1) a:hover {
-	background-color: var(--color-case-studies);
-	color:white;
-	}
-	nav li:nth-child(2) a {
-		color: var(--color-bio);
-	}
-	nav li:nth-child(2) a:hover {
-		background-color: var(--color-bio);
-	color:white;
-	}	nav li:nth-child(3) a {
-		color: var(--color-contact);
-	}
-	nav li:nth-child(3) a:hover {
-		background-color: var(--color-contact);
-	color:white;
-	}
+
 </style>
