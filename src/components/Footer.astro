@@ -4,12 +4,9 @@
 ---
 
 <footer>
-    <div class="control gap-12 md-gap-0 flex flex-col-reverse justify-between pt-24 pb-32">
-        <div class="footer-content">
-            <h3>Alvar Sirlin</h3>
-        <p>&copy; {new Date().getFullYear()} All rights reserved.</p>
-        </div>
-        <div class="footer-content">
+    <div class="control pt-24 pb-32">
+
+        <div class="footer-content mb-8">
             <h3>Links</h3>
             <ul class="flex-col">
               <li><a href="https://github.com/alvarix">GitHub</a></li>
@@ -17,9 +14,13 @@
               <li><a href="https://instagram.com/alvar_en">Instagram</a></li>
             </ul>
         </div>
-        <div class="footer-content">
+        <div class="footer-content mb-8">
             <h3>Contact</h3>
             <a href=''>Email me</a>
+        </div>
+        <div class="footer-content mb-8">
+            <h3>Alvar Sirlin</h3>
+        <p class="copy">&copy; {new Date().getFullYear()} All rights reserved.</p>
         </div>
     </div>
   </footer>
@@ -27,6 +28,9 @@
   <script src="../js/common.js"></script>
   
   <style>
+    .copy {
+      color:rgb(64 105 151);
+    }
     footer {
       background-color: #333;
       background: linear-gradient(109.6deg, rgb(20, 30, 48) 11.2%, rgb(36, 59, 85) 91.1%);
