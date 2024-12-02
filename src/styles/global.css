@@ -30,6 +30,7 @@ a.effect:hover::before {
 }
 a.effect {
 	position: relative;
+	display: inline-block;
 }
 
 	.color-bio {
