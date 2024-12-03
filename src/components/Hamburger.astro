@@ -92,7 +92,8 @@ document.addEventListener('astro:page-load', () => {
     <li><a class:list={[ 'control','contact',{active: isContact}] }  href="/contact">Contact</a></li>
   </ul>
 </nav>
-<style>
+
+<style lang="">
 
 .hamburger .case-studies.active {
     background-color: var(--color-case-studies);
@@ -105,6 +106,12 @@ document.addEventListener('astro:page-load', () => {
 }
 .hamburger {
 	cursor: pointer;
+  transition: all .2s ease-in-out;
+  }
+
+  .hamburger:hover {
+    transform: scale(1.2);
+
   }
   
   .hamburger span {
@@ -127,6 +134,10 @@ document.addEventListener('astro:page-load', () => {
 
 .hamburger.is-open span:nth-child(3) {
   transform: translateY(-4px) rotate(-45deg);
+}
+
+body:has(#bio) .hamburger.is-open span:nth-child(3) {
+  background-color: var(--color-bio);
 }
 
 
