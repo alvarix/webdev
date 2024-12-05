@@ -33,7 +33,10 @@ const cover = entry.data.cover;
         
         <!-- <p>Written on: {frontmatter.date}</p>-->
     </div>
-  {cover && <Image transition:name=`thumb-${entry.slug}` src={cover} alt="" />}
+    <div class="hero" >
+
+      {cover && <Image transition:name=`thumb-${entry.slug}`  class="hero__img" src={cover} alt="" />}
+    </div>
   <div class="bgcolor">
     <div class="control prose">
       <Content />
@@ -41,8 +44,19 @@ const cover = entry.data.cover;
   </div>
 </Layout>
 
-<style define:vars={{bgColor}}>
+<style define:vars={{bgColor}} lang="styl">
+
+  .hero
+    background var(--bgColor)
+    background #000
+    img 
+      mask-image linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,.005));
+
   
+  .control 
+    max-width 45rem
+  
+
   .bgcolor {
     background-color: var(--bgColor);
   }
