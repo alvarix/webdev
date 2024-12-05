@@ -1,6 +1,6 @@
 ---
 title: "PetPortraits.ink"
-cover: "../../assets/pp.png"
+cover: "../../assets/pp2.png"
 coverAlt: "Image of storefront hero"
 description: "A Portfolio WordPress Theme using Blocks"
 tags: ["wordpress","ajax","javascript","blocks"]

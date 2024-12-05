@@ -70,8 +70,12 @@ a.effect {
     }
 
 	h3 {
-		font-size: 32px;
+		font-size: 2rem;
 		font-weight: bold;
+	}
+
+	h4 {
+		font-size: 1.5rem;
 	}
 
 	.control {
@@ -115,7 +119,7 @@ nav a:hover {
 }
 
 footer .ext-link::after {
-		background: none;
+	background: none;
 }
 
 nav li:nth-child(2) a {
@@ -138,3 +142,28 @@ nav li:nth-child(2) a:hover {
 		background-color: var(--color-contact);
   color: white;
 	}
+
+.prose li::marker {
+	color: currentColor;
+}
+
+footer a { 
+	color: var(--color-bio);
+	text-decoration: none;
+}
+
+footer a:hover {
+  color:var(--color-case-studies);
+  text-decoration: underline;
+}
+
+a {
+	text-decoration: underline;
+}
+
+a:hover,
+a.effect,
+#header a, 
+body nav a {
+	text-decoration: none;
+}

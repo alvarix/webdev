@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+
 // 1. Generate a new path for every collection entry
 
 export async function getStaticPaths() {
@@ -40,7 +41,7 @@ document.addEventListener('astro:page-load', () => {
 
 
 <Layout title=`${entry.data.title} | Alvar Web Development` bgColor={bgColor} section="case-studies">
-    <div class="control prose page">
+    <div class="control prose case-study page">
         <h1>{entry.data.title}</h1>
         
         {entry.data.tags && (
@@ -48,7 +49,6 @@ document.addEventListener('astro:page-load', () => {
             {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
         </ul>
         )}
-
         
         <!-- <p>Written on: {frontmatter.date}</p>-->
     </div>
@@ -74,12 +74,12 @@ document.addEventListener('astro:page-load', () => {
   }
 
 
-  X.hero
+  .hero
     Xbackground var(--bgColor)
     Xbackground #000
     &:hover 
       filter: blur(.75px);
-    Ximg 
+    img 
       width 100%
       mask-image: linear-gradient(180deg, transparent, #fff 14%);
       /* overlay 
@@ -87,6 +87,9 @@ document.addEventListener('astro:page-load', () => {
       backdrop-filter: grayscale(70%);
       backdrop-filter: saturate(6);
       */
+  
+  a.effect 
+    text-decoration: none !important
 
   h1  
     margin-bottom 0

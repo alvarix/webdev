@@ -1,5 +1,6 @@
 ---
 title: "Educare Microsite"
+cover: ../../assets/edu.webp
 description: "Quiz Based Resource Library Sorting"
 tags: ["WordPress","Gravity Forms","PHP", "JavaScript"]
 date: 2024-08-13
@@ -8,7 +9,7 @@ order: 9
 draft: false
 ---
 
-[familyleadership.educareschools.org](https://familyleadership.educareschools.org/)
+## [familyleadership.educareschools.org](https://familyleadership.educareschools.org/)
 
 I built this website with my longtime collaborator *Serendipity Creative* studio.  
 

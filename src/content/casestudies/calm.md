@@ -1,6 +1,6 @@
 ---
 title: "Calm Store"
-cover: "../../assets/hero-calm.jpg"
+cover: "../../assets/hero-calm.webp"
 coverAlt: "Image of storefront hero"
 description: "Portfolio WordPress Theme using Blocks"
 tags: ["shopify","vue", "tailwind"]

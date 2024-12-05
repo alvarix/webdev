@@ -1,14 +1,14 @@
 ---
 title: "Flogger"
-description: "Log style note taking app"
-tags: ["Vue","Pair Programming","Dropbox SDK", "TypeScript"]
+description: "Vue based Logger App"
+tags: ["Vue","Pair Programming","Dropbox SDK", "TypeScript", "webapp"]
 date: 2024-06-01
 color: "canary"
 order: 3
-draft: false
+draft: true
 ---
 
-## Vue based note taking app
+## Progressive enhancement for text files
 
 [WIP Website](https://flogger.vercel.app)   
 [Github](https://github.com/alvarix/FLogger)

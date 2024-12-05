@@ -1,18 +1,12 @@
 ---
-// src/components/Footer.astro
-// Import any props here if needed in the future
+import Links from './Links.astro';
 ---
 
 <footer>
     <div class="control pt-24 pb-32">
 
         <div class="footer-content mb-8">
-            <h3>Links</h3>
-            <ul class="flex-col">
-              <li><a href="https://github.com/alvarix">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/alvarsirlin/">LinkedIn</a></li>
-              <li><a href="https://instagram.com/alvar_en">Instagram</a></li>
-            </ul>
+          <Links />
         </div>
         <div class="footer-content mb-8">
             <h3>Contact</h3>
@@ -46,11 +40,6 @@
       justify-content: center;
     }
   
-    a 
-      color: var(--color-bio)
-      text-decoration: none
-      &:hover
-        color var(--color-case-studies)
-        text-decoration: underline;
+
   
   </style>
