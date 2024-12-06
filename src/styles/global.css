@@ -69,13 +69,25 @@ a.effect {
         background-color: var(--color-contact);
     }
 
+	.prose h2,
+	h2 {
+
+		font-size: 2.5rem;
+	}
+
+	.prose h3,
 	h3 {
 		font-size: 2rem;
 		font-weight: bold;
 	}
 
+	.prose h4,
 	h4 {
 		font-size: 1.5rem;
+	}
+
+	h5 {
+		font-weight: bold;
 	}
 
 	.control {

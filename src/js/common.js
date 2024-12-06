@@ -28,7 +28,6 @@ const addClassToAnchorsInHeaders = (addClassName) => {
     // Check if there are anchors inside the header
     const anchors = header.querySelectorAll('a');
     if (!anchors.length) {
-      console.warn(`No anchors found inside header:`, header);
       return;
     }
     // Add the class to each anchor
@@ -38,3 +37,4 @@ const addClassToAnchorsInHeaders = (addClassName) => {
     });
   });
 };
+

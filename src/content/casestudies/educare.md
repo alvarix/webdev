@@ -2,7 +2,7 @@
 title: "Educare Microsite"
 cover: ../../assets/edu.webp
 description: "Quiz Based Resource Library Sorting"
-tags: ["WordPress","Gravity Forms","PHP", "JavaScript"]
+tags: ["WordPress","Accessibility","Gravity Forms","PHP", "JavaScript"]
 date: 2024-08-13
 color: "#fffbf3"
 order: 9

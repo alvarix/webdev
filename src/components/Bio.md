@@ -12,9 +12,16 @@ In the last few years I've been discovering the *New* JavaScript Front End.
 
 ## Colophon
 - This site was create with Astro JS.
-    - Web Transitions
-    - MarkDown
-    - Image Component
+    - Component based Architecture
+    - Code fenced JS for SSR with client side optional 
+    - Layouts
+    - View Transitions API
+    - Content
+      - file-based routing 
+      - Collections 
+      - MarkDown
+    - Optimization
+    - 
 - Lato font
 - Vercel
 - Github
