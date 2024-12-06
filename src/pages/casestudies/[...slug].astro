@@ -21,8 +21,15 @@ const cover = entry.data.cover;
 
 ---
 
-<script>
+<script type="module">
+
 /*
+Rendering is not blocked. The browser continues to process the rest of the HTML while the module script and its dependencies load.
+The browser waits for HTML to be processed before executing module scripts. You do not need to listen for the “load” event.
+async and defer attributes are unnecessary. Module scripts are always deferred.
+
+
+
 Couldnt make this work as JS only progressive enhancement
 Setting filter style via JS always ends up as final style
 */
@@ -33,9 +40,7 @@ function toggleHeroBlur() {
   }
 }
 
-document.addEventListener('astro:page-load', () => {
   toggleHeroBlur();
-})
 
 </script>
 
