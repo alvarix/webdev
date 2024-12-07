@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import {Content as Bio} from '../components/Bio.md';
 import Links from '../components/Links.astro';
+import { Image } from 'astro:assets';
+import  Pic  from '../assets/alvar-and-parker.webp';
 
 ---
 
@@ -15,25 +17,31 @@ import Links from '../components/Links.astro';
 </script>
 
 
-<Layout title="Alvar Sirlin, Front End Dev" section='bio'>
+<Layout title="Alvar Sirlin Bio" section='bio'>
+
     <section id='bio' class="page"  transition:name='bio'>
-        <div class="control flex gap-24">
-            <div class="w-1/2 prose">
 
+        <div class="control flex flex-col md:flex-row gap-24 justify-between">
+
+            <div class="md:w-1/2 prose">
+                <h4 class="mb-6  md:hidden"><a class="icon-pdf" href="https://www.dropbox.com/scl/fi/0s6uh8e0s3dnk47427ted/Alvar-Sirlin-CV.pdf?rlkey=14nbf45dptp400uyi1dr1kjw2&dl=0">Curriculum Vitae</a></h4>
                 <Bio />
-
             </div>
-            <div>
-                <h3 class="mb-12"><a class="icon-pdf" href="https://www.dropbox.com/scl/fi/0s6uh8e0s3dnk47427ted/Alvar-Sirlin-CV.pdf?rlkey=14nbf45dptp400uyi1dr1kjw2&dl=0">Curriculum Vitae</a></h3>
+
+            <div class="md:w-4/12">
+                <h3 class="mb-12 hidden md:block"><a class="icon-pdf" href="https://www.dropbox.com/scl/fi/0s6uh8e0s3dnk47427ted/Alvar-Sirlin-CV.pdf?rlkey=14nbf45dptp400uyi1dr1kjw2&dl=0">Curriculum Vitae</a></h3>
+
+                <div class="rounded-lg mb-8 overflow-hidden">
+                    <Image  src={Pic} alt="Alvar and his dog Parker"/>
+                </div>
 
                 <Links />
             
             </div>
         </div>
-        </section>
-    </Layout>
+    </section>
 
 
-<style>
 
-</style>
+
+</Layout>
