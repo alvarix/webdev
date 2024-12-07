@@ -2,7 +2,18 @@
 import Layout from '../layouts/Layout.astro';
 import {Content as Bio} from '../components/Bio.md';
 import Links from '../components/Links.astro';
+
 ---
+
+
+<script> 
+    import {  setExternalLinks, addClassToAnchorsInHeaders   } from  '../js/common'; 
+    document.addEventListener("astro:page-load", () => {
+        setExternalLinks();
+        addClassToAnchorsInHeaders('effect');
+    });
+</script>
+
 
 <Layout title="Alvar Sirlin, Front End Dev" section='bio'>
     <section id='bio' class="page"  transition:name='bio'>

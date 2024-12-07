@@ -1,7 +1,7 @@
-window.addEventListener("load", () => {
-  setExternalLinks();
-  addClassToAnchorsInHeaders('effect');
-});
+export {
+  setExternalLinks,
+  addClassToAnchorsInHeaders 
+}
 
 
 /**
