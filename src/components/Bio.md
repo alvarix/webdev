@@ -16,7 +16,13 @@ In the last few years I've been discovering the *New* JavaScript Front End.
     - Code fenced JS for SSR with client side optional 
     - Layouts
     - View Transitions API
+    - Hydration of *Islands* of interactivity in a site statically rendered by default
+    - Jamstack
+      - Content-Driven Development
+      - Performance Benefits
+      - Dynamic Yet Static
     - Content
+
       - file-based routing 
       - Collections 
       - MarkDown

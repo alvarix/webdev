@@ -1,16 +1,16 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, imageConfig } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 // 1. Generate a new path for every collection entry
-
 export async function getStaticPaths() {
   const posts = await getCollection('casestudies');
   return posts.map(entry => ({
     params: { slug: entry.slug }, props: { entry },
   }));
 }
+
 // 2. For your template, you can get the entry directly from the prop
 
 const { entry } = Astro.props;
@@ -43,7 +43,6 @@ function toggleHeroBlur() {
   toggleHeroBlur();
 
 </script>
-
 
 <Layout title=`${entry.data.title} | Alvar Web Development` bgColor={bgColor} section="case-studies">
     <div class="control prose case-study page">
