@@ -1,6 +1,7 @@
 ---
-import { Image, imageConfig } from 'astro:assets';
 import Layout from '../../layouts/Layout.astro';
+import PostNav from '../../components/PostNav.astro';
+import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 // 1. Generate a new path for every collection entry
@@ -21,40 +22,39 @@ const cover = entry.data.cover;
 
 ---
 
-<script type="module">
 
-/*
-Rendering is not blocked. The browser continues to process the rest of the HTML while the module script and its dependencies load.
-The browser waits for HTML to be processed before executing module scripts. You do not need to listen for the “load” event.
-async and defer attributes are unnecessary. Module scripts are always deferred.
-
-
-
-Couldnt make this work as JS only progressive enhancement
-Setting filter style via JS always ends up as final style
-*/
-function toggleHeroBlur() {
-  const hero = document.querySelector('.hero');
-  if (hero) {
-    hero.classList.toggle('no-blur');
-  }
-}
-
-  toggleHeroBlur();
-
+<script> 
+    import {  
+      setExternalLinks, 
+      addClassToAnchorsInHeaders,
+      toggleElBlur,
+    } 
+    from  '../../js/common'; 
+    
+    document.addEventListener("astro:page-load", () => {
+        setExternalLinks();
+        addClassToAnchorsInHeaders('effect');
+        toggleElBlur('.hero');
+    })
 </script>
 
+
+
+
 <Layout title=`${entry.data.title} | Alvar Web Development` bgColor={bgColor} section="case-studies">
-    <div class="control prose case-study page">
-        <h1>{entry.data.title}</h1>
-        
-        {entry.data.tags && (
-        <ul class='tags flex gap-2 list-none pl-0'>
-            {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
-        </ul>
-        )}
-        
-        <!-- <p>Written on: {frontmatter.date}</p>-->
+
+  
+  <div class="control prose case-study page">
+      <PostNav />
+      <h1>{entry.data.title}</h1>
+      
+      {entry.data.tags && (
+      <ul class='tags flex gap-2 list-none pl-0'>
+          {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
+      </ul>
+      )}
+      
+      <!-- <p>Written on: {frontmatter.date}</p>-->
     </div>
     <div class="hero" >
 
@@ -68,29 +68,15 @@ function toggleHeroBlur() {
 </Layout>
 
 <style define:vars={{bgColor}} lang="styl">
-  .hero {
-    filter: blur(10px); 
-    transition: filter 1s ease-in-out; 
-  }
-
-  .hero.no-blur {
-    filter: blur(0); 
-  }
-
 
   .hero
     Xbackground var(--bgColor)
-    Xbackground #000
     &:hover 
-      filter: blur(.75px);
+      filter: blur(.75px) !important;
     img 
       width 100%
       mask-image: linear-gradient(180deg, transparent, #fff 14%);
-      /* overlay 
-      backdrop-filter: blur(6px);
-      backdrop-filter: grayscale(70%);
-      backdrop-filter: saturate(6);
-      */
+
   
   a.effect 
     text-decoration: none !important

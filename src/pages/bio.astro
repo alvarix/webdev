@@ -9,7 +9,12 @@ import  Pic  from '../assets/alvar-and-parker.webp';
 
 
 <script> 
-    import {  setExternalLinks, addClassToAnchorsInHeaders   } from  '../js/common'; 
+    import {  
+        setExternalLinks, 
+        addClassToAnchorsInHeaders   
+    } 
+    from  '../js/common'; 
+    
     document.addEventListener("astro:page-load", () => {
         setExternalLinks();
         addClassToAnchorsInHeaders('effect');

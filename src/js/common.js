@@ -1,6 +1,7 @@
 export {
   setExternalLinks,
-  addClassToAnchorsInHeaders 
+  addClassToAnchorsInHeaders,
+  toggleElBlur,
 }
 
 
@@ -37,4 +38,17 @@ const addClassToAnchorsInHeaders = (addClassName) => {
     });
   });
 };
+
+
+const toggleElBlur = (element) => {
+  const el = document.querySelector(element);
+
+  if (el) {
+    el.style.filter='blur(10px)';
+    setTimeout(() => {
+      el.style.transition='filter 1s ease-in-out'; 
+      el.style.filter='blur(0px)';
+    }, "200");
+  }
+}
 
