@@ -1,0 +1,16 @@
+---
+import "tippy.js/dist/tippy.css";
+// https://blopker.com/writing/astro-and-tippy/
+---
+
+<script>
+  import tippy from "tippy.js";
+  document.addEventListener("astro:page-load", () => {
+    const tips = document.querySelectorAll("[tip]");
+    tips.forEach((t) => {
+      tippy(t, {
+        content: t.attributes.getNamedItem("tip")?.textContent || "",
+      });
+    });
+  });
+</script>
