@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import fwdIcon from "/public/icon__fwd.svg?raw"
+
+
+const posts = (await getCollection('casestudies'))
+	.sort((a, b) => b.data.order.valueOf() - a.data.order.valueOf());
+
+const currentIndex = posts.findIndex((post) => post.slug == Astro.params.slug);
+const previousIndex = currentIndex + 1 === posts.length ? undefined : posts[currentIndex + 1];
+const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
+
+// adapted from:
+// https://johndalesandro.com/blog/astro-adding-previous-and-next-post-navigation-links-to-blog/#:~:text=Create%20the%20Navigation%20Component&text=code%20in%20BlogPostNavPrevNext.-,astro%20.,link%20won't%20be%20shown.
+// added looping navigation
+---
+
+{
+    (posts.length > 1) && (
+        <nav>
+            {(() => {
+                const prevIndex = (currentIndex - 1 + posts.length) % posts.length;
+                const nextIndex = (currentIndex + 1) % posts.length;
+
+                const previousPost = posts[prevIndex];
+                const nextPost = posts[nextIndex];
+
+                return (
+                    <>
+                        { previousPost && ( 
+                            <a 
+                                class='post-nav__link back icon' 
+                                href={`/casestudies/${previousPost.slug}/`} 
+                                tip={previousPost.data.title}
+                            >
+                                <Fragment set:html={fwdIcon} />
+                            </a> 
+                        ) }
+                        { nextPost && ( 
+                            <a 
+                                class='post-nav__link fwd icon' 
+                                href={`/casestudies/${nextPost.slug}/`} 
+                                tip={nextPost.data.title}
+                            >
+                                <Fragment set:html={fwdIcon} />
+                            </a> 
+                        ) }
+                    </>
+                );
+            })()}
+        </nav>
+    )
+}
+<style lang="styl">
+
+.post-nav__link 
+    position absolute
+    top 80px
+    width 20px
+    opacity 1
+
+    &:hover 
+        color var(--color-case-studies)
+        
+    &.back
+        left -80px
+
+    &.fwd 
+        right -80px
+
+    
+.back 
+    transform rotate(-180deg)
+
+   
+
+</style>
