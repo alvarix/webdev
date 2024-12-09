@@ -109,13 +109,13 @@ a.effect {
 			monospace;
 	}
 
-nav a {
+nav.big a {
 	font-weight: 700;
 	padding: 25px !important;
 	font-size: 28px;
 }
 
-nav a:hover {
+nav.big a:hover {
   background-color: #000;
   color: white;
 }
@@ -128,32 +128,45 @@ nav a:hover {
 	height: 18px;
 	display: inline-block;
 	margin-left: 5px;
+	vertical-align: text-top;
+	font-size: inherit;
 }
 
 footer .ext-link::after {
 	background: none;
 }
 
-nav li:nth-child(2) a {
+nav.big li:nth-child(2) a {
 	color: var(--color-case-studies);
 }
-nav li:nth-child(2) a:hover {
+nav.big li:nth-child(2) a:hover {
 	background-color: var(--color-case-studies);
   color: white;
 	}
-	nav li:nth-child(3) a {
+	nav.big li:nth-child(3) a {
 		color: var(--color-bio);
 	}
-	nav li:nth-child(3) a:hover {
+	nav.big li:nth-child(3) a:hover {
 		background-color: var(--color-bio);
   color: white;
 	}	nav li:nth-child(4) a {
 		color: var(--color-contact);
 	}
-	nav li:nth-child(4) a:hover {
+	nav.big li:nth-child(4) a:hover {
 		background-color: var(--color-contact);
   color: white;
 	}
+
+.icon {
+	opacity: .7;
+	transform: scale(.95);
+	transition: all;
+}
+
+.icon:hover {
+	opacity: 1;
+	transform: scale(1);
+}
 
 .prose li::marker {
 	color: currentColor;
