@@ -17,7 +17,7 @@ const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
 
 {
     (posts.length > 1) && (
-        <nav>
+        <nav class="control relative">
             {(() => {
                 const prevIndex = (currentIndex - 1 + posts.length) % posts.length;
                 const nextIndex = (currentIndex + 1) % posts.length;
@@ -53,6 +53,9 @@ const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
 }
 <style lang="styl">
 
+.control
+    padding 0
+
 .post-nav__link 
     position absolute
     top 80px
@@ -63,10 +66,10 @@ const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
         color var(--color-case-studies)
 
     &.back
-        left -10%
+        left -35px
 
     &.fwd 
-        right -10%
+        right -35px
 
     
 .back 
