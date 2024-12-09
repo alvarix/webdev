@@ -21,8 +21,27 @@ switch (section) {
 
 ---
 
+
+
+<div class="hamburger self-end">
+    <span class:list={[ 'case-studies',{active: isCs}] }></span>
+    <span class:list={[ 'bio',{active: isBio}] }></span>
+    <span class:list={[ 'contact',{active: isContact}] }></span>
+</div>
+
+<nav class="nav-links z-20 big">
+
+  <ul class="mt-14">
+    <li><a data-link="home" class='control' href="/">Home</a></li>
+    <li><a data-link="cs" class:list={['control', 'case-studies',{active: isCs}] } href="/casestudies">Case Studies</a></li>
+    <li><a data-link="bio" class:list={['control', 'bio',{active: isBio}] } href="/bio">Bio</a></li>
+    <li><a data-link="contact" class:list={[ 'control','contact',{active: isContact}] }  href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
 <script>
 document.addEventListener('astro:page-load', () => {
+
   /**
    * Toggles the 'expanded' class on the navigation menu when the hamburger icon is clicked.
    * Closes the menu when clicking outside with a fade-out effect.
@@ -70,30 +89,25 @@ document.addEventListener('astro:page-load', () => {
   } else {
     console.warn('Hamburger or nav-links element not found in the DOM.');
   }
+
+  // dynamically set view-transition-name css property of each navLink to it's data-link attr onclick
+  const anchors = navLinks.querySelectorAll('a');
+  anchors.forEach((anchor) => {
+    const transName = anchor.getAttribute('data-link'); 
+    anchor.addEventListener('click', () => {
+      anchor.style.viewTransitionName = transName;
+      console.log(transName)
+    });
+  });
 });
 
-
-
-
 </script>
-
-<div class="hamburger self-end">
-    <span class:list={[ 'case-studies',{active: isCs}] }></span>
-    <span class:list={[ 'bio',{active: isBio}] }></span>
-    <span class:list={[ 'contact',{active: isContact}] }></span>
-</div>
-
-<nav class="nav-links z-20 big">
-
-  <ul class="mt-14">
-    <li><a class='control' href="/">Home</a></li>
-    <li><a class:list={['control', 'case-studies',{active: isCs}] } href="/casestudies">Case Studies</a></li>
-    <li><a class:list={[ 'control','bio',{active: isBio}] } href="/bio">Bio</a></li>
-    <li><a class:list={[ 'control','contact',{active: isContact}] }  href="/contact">Contact</a></li>
-  </ul>
-</nav>
-
 <style lang="styl">
+
+  :root {
+    view-transition-name: none;
+  }
+
 .hamburger
   cursor pointer
   transition all .2s ease-in-out
@@ -147,6 +161,15 @@ body
   opacity 0
   transition opacity 0.3s ease
   pointer-events none
+  .active 
+    color white
+    pointer-events none
+    &.case-studies
+      background-color var(--color-case-studies)
+    &.bio
+      background-color var(--color-bio)
+    &.contact
+      background-color var(--color-contact)
   &.expanded
     display unset
     pointer-events: auto; 
