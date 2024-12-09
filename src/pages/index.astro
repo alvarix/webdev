@@ -19,9 +19,9 @@ import Layout from '../layouts/Layout.astro';
 		<nav class="md:mt-16 big">
 			<ul>
 				<li><a class="hidden" href="/">Home</a></li>
-				<li><a class="xeffect" transition:name='cs' href="/casestudies">Case Studies</a></li>
-				<li><a class="xeffect" transition:name='bio' href="/bio">Bio</a></li>
-				<li><a class="xeffect" transition:name='contact' href="/contact">Contact</a></li>
+				<li><a transition:name='cs' href="/casestudies">Case Studies</a></li>
+				<li><a transition:name='bio' href="/bio">Bio</a></li>
+				<li><a transition:name='contact' href="/contact">Contact</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -32,22 +32,7 @@ import Layout from '../layouts/Layout.astro';
 
 
 nav a {
-
-	line-height: 1.25;
-	Xmargin-bottom: 20px;
-	display: inline-block;
-
-	border-radius: 15px;
 	width: 20rem;
-    transition: all 220ms linear;
-
-}
-
-
-nav a.effect::before {
-	bottom: -10px;
-	height: 4px;
-	border-radius: 4px;
 }
 
 

@@ -28,96 +28,99 @@ a.effect:hover::before {
 	transform-origin: left;
 	transform: scaleX(1);
 }
+
 a.effect {
 	position: relative;
 	display: inline-block;
 }
 
-	.color-bio {
-		color: var(--color-bio);
-	}
+.color-bio {
+	color: var(--color-bio);
+}
 
-	.header .section-name {
-		text-transform: capitalize;
-	}
+.header .section-name {
+	text-transform: capitalize;
+}
 
-	.color-case-studies {
-		color: var(--color-case-studies);
-	}
+.color-case-studies {
+	color: var(--color-case-studies);
+}
 
-	.color-contact {
-		color: var(--color-contact);
-	}
+.color-contact {
+	color: var(--color-contact);
+}
 
-	html {
-		font-family: Lato, system-ui, sans-serif;
-		color-scheme: light dark;
-	}
+html {
+	font-family: Lato, system-ui, sans-serif;
+	color-scheme: light dark;
+}
 
-    Xbody:has(#bio),
-    #bio {
-        background-color: var(--color-bio);
-    }
+Xbody:has(#bio),
+#bio {
+	background-color: var(--color-bio);
+}
 
-    Xbody:has(#case-studies),
-    #case-studies {
-        background-color: var(--color-case-studies);
-    }
+Xbody:has(#case-studies),
+#case-studies {
+	background-color: var(--color-case-studies);
+}
 
-    Xbody:has(#contact),
-    #contact {
-        background-color: var(--color-contact);
-    }
+Xbody:has(#contact),
+#contact {
+	background-color: var(--color-contact);
+}
 
-	.prose h2,
-	h2 {
+.prose h2,
+h2 {
+	font-size: 2.5rem;
+}
 
-		font-size: 2.5rem;
-	}
+.prose h3,
+h3 {
+	font-size: 2rem;
+	font-weight: bold;
+}
 
-	.prose h3,
-	h3 {
-		font-size: 2rem;
-		font-weight: bold;
-	}
+.prose h4,
+h4 {
+	font-size: 1.5rem;
+}
 
-	.prose h4,
-	h4 {
-		font-size: 1.5rem;
-	}
+h5 {
+	font-weight: bold;
+}
 
-	h5 {
-		font-weight: bold;
-	}
+.control {
+	max-width: 1270px ;
+	width: 80%;
+	margin: auto;
+	padding: 50px 0;
+}
 
-	.control {
-		max-width: 1270px ;
-		width: 80%;
-		margin: auto;
-		padding: 50px 0;
-	}
-
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+code {
+	font-family:
+		Menlo,
+		Monaco,
+		Lucida Console,
+		Liberation Mono,
+		DejaVu Sans Mono,
+		Bitstream Vera Sans Mono,
+		Courier New,
+		monospace;
+}
 
 nav.big a {
 	font-weight: 700;
 	padding: 25px !important;
 	font-size: 28px;
+	display: block;
+    transition: all 200ms linear;
+    border-radius: 15px;
 }
 
 nav.big a:hover {
-  background-color: #000;
-  color: white;
+	background-color: #000;
+	color: white;
 }
 
 .ext-link::after {
@@ -139,23 +142,28 @@ footer .ext-link::after {
 nav.big li:nth-child(2) a {
 	color: var(--color-case-studies);
 }
+
 nav.big li:nth-child(2) a:hover {
 	background-color: var(--color-case-studies);
-  color: white;
-	}
-	nav.big li:nth-child(3) a {
-		color: var(--color-bio);
-	}
-	nav.big li:nth-child(3) a:hover {
-		background-color: var(--color-bio);
-  color: white;
-	}	nav li:nth-child(4) a {
-		color: var(--color-contact);
-	}
-	nav.big li:nth-child(4) a:hover {
-		background-color: var(--color-contact);
-  color: white;
-	}
+ 	color: white;
+}
+
+nav.big li:nth-child(3) a {
+	color: var(--color-bio);
+}
+nav.big li:nth-child(3) a:hover {
+	background-color: var(--color-bio);
+	color: white;
+}	
+	
+nav li:nth-child(4) a {
+	color: var(--color-contact);
+}
+
+nav.big li:nth-child(4) a:hover {
+	background-color: var(--color-contact);
+	color: white;
+}
 
 .icon {
 	opacity: .7;
