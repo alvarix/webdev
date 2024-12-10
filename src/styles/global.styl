@@ -1,104 +1,104 @@
-:root {
-	color-scheme: light only;
-	--color-case-studies: #FF3103;
-	--color-case-studies--light: #f3603f;
-	--color-bio: #00A3FF;
-	--color-bio--light: #51b8f3;
-	--color-contact: #C8B447;
-	--color-contact--light: #dec950;
-	--color-contact--lighter: #eedc77;
-	--round: 6px;
-	--rounder: 15px;
-}
+:root 
+	color-scheme: light only
+	--color-case-studies: #FF3103
+	--color-case-studies--light: #f3603f
+	--color-bio: #00A3FF
+	--color-bio--light: #51b8f3
+	--color-contact: #C8B447
+	--color-contact--light: #dec950
+	--color-contact--lighter: #eedc77
+	--round: 6px
+	--rounder: 15px
 
-a.effect::before {
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 3px;
-	border-radius: 3px;
-	background-color: currentColor;
-	bottom: -2px;
-	left: 0;
-	transform-origin: right;
-	transform: scaleX(0);
-	transition: transform .3s ease-in-out;
-}
 
-a.effect:hover::before {
-	transform-origin: left;
-	transform: scaleX(1);
-}
+a.effect::before 
+	content: ''
+	position: absolute
+	width: 100%
+	height: 3px
+	border-radius: 3px
+	background-color: currentColor
+	bottom: -2px
+	left: 0
+	transform-origin: right
+	transform: scaleX(0)
+	transition: transform .3s ease-in-out
 
-a.effect {
-	position: relative;
-	display: inline-block;
-}
 
-.color-bio {
-	color: var(--color-bio);
-}
+a.effect:hover::before 
+	transform-origin: left
+	transform: scaleX(1)
 
-.header .section-name {
-	text-transform: capitalize;
-}
 
-.color-case-studies {
-	color: var(--color-case-studies);
-}
+a.effect 
+	position: relative
+	display: inline-block
 
-.color-contact {
-	color: var(--color-contact);
-}
 
-html {
-	font-family: Lato, system-ui, sans-serif;
-	color-scheme: light dark;
-}
+.color-bio 
+	color: var(--color-bio)
+
+
+.header .section-name 
+	text-transform: capitalize
+
+
+.color-case-studies 
+	color: var(--color-case-studies)
+
+
+.color-contact 
+	color: var(--color-contact)
+
+
+html 
+	font-family: Lato, system-ui, sans-serif
+	color-scheme: light dark
+
 
 Xbody:has(#bio),
-#bio {
-	background-color: var(--color-bio);
-}
+#bio 
+	background-color: var(--color-bio)
+
 
 Xbody:has(#case-studies),
-#case-studies {
-	background-color: var(--color-case-studies);
-}
+#case-studies 
+	background-color: var(--color-case-studies)
+
 
 Xbody:has(#contact),
-#contact {
-	background-color: var(--color-contact);
-}
+#contact 
+	background-color: var(--color-contact)
+
 
 .prose h2,
-h2 {
-	font-size: 2.5rem;
-}
+h2 
+	font-size: 2.5rem
+
 
 .prose h3,
-h3 {
-	font-size: 2rem;
-	font-weight: bold;
-}
+h3 
+	font-size: 2rem
+	font-weight: bold
+
 
 .prose h4,
-h4 {
-	font-size: 1.5rem;
-}
+h4 
+	font-size: 1.5rem
 
-h5 {
-	font-weight: bold;
-}
 
-.control {
-	max-width: 1270px ;
-	width: 80%;
-	margin: auto;
-	padding: 50px 0;
-}
+h5 
+	font-weight: bold
 
-code {
+
+.control 
+	max-width: 1270px 
+	width: 80%
+	margin: auto
+	padding: 50px 0
+
+
+code 
 	font-family:
 		Menlo,
 		Monaco,
@@ -107,33 +107,33 @@ code {
 		DejaVu Sans Mono,
 		Bitstream Vera Sans Mono,
 		Courier New,
-		monospace;
-}
+		monospace
 
-nav.big a {
-	font-weight: 700;
-	padding: 25px !important;
-	font-size: 28px;
-	display: block;
-    transition: all 200ms linear;
-    border-radius: var(--rounder);
-}
 
-nav.big a:hover {
-	background-color: #000;
-	color: white;
-}
+nav.big a 
+	font-weight: 700
+	padding: 25px !important
+	font-size: 28px
+	display: block
+    transition: all 200ms linear
+    border-radius: var(--rounder)
+
+
+nav.big a:hover 
+	background-color: #000
+	color: white
+
 
 .ext-link::after 
-	content: "";
-	background:right 0 transparent url(/public/icon__ext-link.svg);
-	background-size: contain;
-	width: 15px;
-	height: 15px;
-	display: inline-block;
-	margin-left: 3px;
-	vertical-align: text-top;
-	font-size: inherit;
+	content: ""
+	background:right 0 transparent url(/public/icon__ext-link.svg)
+	background-size: contain
+	width: 15px
+	height: 15px
+	display: inline-block
+	margin-left: 3px
+	vertical-align: text-top
+	font-size: inherit
 	opacity .85
 	transition ease-in-out 200ms
 .ext-link:hover::after
@@ -141,68 +141,67 @@ nav.big a:hover {
 		transform: scale(1.2)
 
 
-footer .ext-link::after {
-	background: none;
-}
+footer .ext-link::after 
+	background: none
 
-nav.big li:nth-child(2) a {
-	color: var(--color-case-studies);
-}
 
-nav.big li:nth-child(2) a:hover {
-	background-color: var(--color-case-studies);
- 	color: white;
-}
+nav.big li:nth-child(2) a 
+	color: var(--color-case-studies)
 
-nav.big li:nth-child(3) a {
-	color: var(--color-bio);
-}
-nav.big li:nth-child(3) a:hover {
-	background-color: var(--color-bio);
-	color: white;
-}	
+
+nav.big li:nth-child(2) a:hover 
+	background-color: var(--color-case-studies)
+ 	color: white
+
+
+nav.big li:nth-child(3) a 
+	color: var(--color-bio)
+
+nav.big li:nth-child(3) a:hover 
+	background-color: var(--color-bio)
+	color: white
 	
-nav li:nth-child(4) a {
-	color: var(--color-contact);
-}
+	
+nav li:nth-child(4) a 
+	color: var(--color-contact)
 
-nav.big li:nth-child(4) a:hover {
-	background-color: var(--color-contact);
-	color: white;
-}
 
-.icon {
-	opacity: .7;
-	transform: scale(.95);
-	transition: all;
-}
+nav.big li:nth-child(4) a:hover 
+	background-color: var(--color-contact)
+	color: white
 
-.icon:hover {
-	opacity: 1;
-	transform: scale(1);
-}
 
-.prose li::marker {
-	color: currentColor;
-}
+.icon 
+	opacity: .7
+	transform: scale(.95)
+	transition: all
 
-footer a { 
-	color: var(--color-bio);
-	text-decoration: none;
-}
 
-footer a:hover {
-  color:var(--color-case-studies);
-  text-decoration: underline;
-}
+.icon:hover 
+	opacity: 1
+	transform: scale(1)
 
-a {
-	text-decoration: underline;
-}
+
+.prose li::marker 
+	color: currentColor
+
+
+footer a  
+	color: var(--color-bio)
+	text-decoration: none
+
+
+footer a:hover 
+  color:var(--color-case-studies)
+  text-decoration: underline
+
+
+a 
+	text-decoration: underline
+
 
 a:hover,
 a.effect,
 #header a, 
-body nav a {
-	text-decoration: none;
-}
+body nav a 
+	text-decoration: none
