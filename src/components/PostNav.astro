@@ -59,11 +59,13 @@ const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
 .post-nav__link 
     position absolute
     top 80px
-    width 20px
+    width 30px
     opacity 1
+    transition all ease-in-out 1s
 
     &:hover 
         color var(--color-case-studies)
+        transform: scale(1.2)
 
     &.back
         left -35px
@@ -71,10 +73,10 @@ const nextIndex = currentIndex === 0 ? undefined : posts[currentIndex - 1];
     &.fwd 
         right -35px
 
-    
 .back 
     transform rotate(-180deg)
-
+    &:hover 
+        transform rotate(-180deg) scale(1.2)
    
 
 </style>
