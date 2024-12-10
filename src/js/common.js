@@ -18,7 +18,7 @@ const setExternalLinks = () => {
       
     if (isExternal) {
       link.setAttribute("target", "_blank");
-      link.className = "ext-link";
+      link.classList.add("ext-link");
     }
   });
 };
