@@ -40,4 +40,3 @@ uses **Lato font**,
 uses **Tailwind** and **Stylus** CSS preprocessors,  
 and Vanilla HTML, CSS and JavaScript for everything else.
 
-Please feel free to ask any questions!
