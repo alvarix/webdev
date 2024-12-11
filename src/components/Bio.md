@@ -13,8 +13,8 @@ During the pandemic I started working with **Shopify**.
 In the last few years I've been discovering the *new* JavaScript based front end paradigm with **Vue** and now **Astro**.
 
 I love building websites 💖  
-I love symbolic thinking and the zen of coding.  
-It's a great game, we get to build these little ingenius systems!
+I love symbolic thinking and the zen of coding.   
+We get to build these little ingenius systems.
 
 
 ### Colophon
@@ -26,7 +26,7 @@ What it offered:
 - Jamstack
   - Content-driven development
   - Performance benefits
-  - Dynamic yet static
+  - Static yet dynamic
 - Content
   - Collections 
   - file-based routing 

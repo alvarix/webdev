@@ -13,18 +13,19 @@ draft: true
 [WIP Website](https://flogger.vercel.app)   
 [Github](https://github.com/alvarix/FLogger)
 
-Inspired by ~~NVAlt~~ (RIP) a friend and I started this app to have some fun learning Vue more deeply and to scratch an itch for what we wanted out of note taking.  
-There are plentuy out there but most seem over or under engineered.  
+Inspired by [NVAlt](https://brettterpstra.com/projects/nvalt/) (RIP),  
+a friend and I started this app to have some fun deepening our knowledge of Vue.  
+There are plentuy of note apps but most seem over or under engineered.  
 I currently use *SimpleNote* from *Automattic*. 
-It's well, simple. 
+It's, well, simple. 
 
-The starting points:
+### Brief
 1. **Data Portability** - Apps come and go, the data shouldn't need a rosetta stone - it should be plain text, or at most Markdown. And it should by cross device so your data is always with you.
 2. **Date Based** - If it can save me putting a date at the top of each entry that's worth the entry fee.
 3. **Fun with Data** - See [Roadmap](#roadmap)
 
 
-## Status
+### Status
 
 1. Integrate Dropbox for cross-device access and authentication
 2. Manage plain text files (flogs):  

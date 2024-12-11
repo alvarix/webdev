@@ -48,12 +48,18 @@ import  Pic  from '../assets/alvar-and-parker.webp';
 </Layout>
 
 <style lang="styl">
-    .prose 
-        font-size 1.1rem
+.prose 
+    font-size 1.1rem
 
-    .icon-pdf.ext-link::after   
-        background-image  url("/public/icon__arrow-down.svg") !important
-        width 20px
-        height 20px
+.icon-pdf::after   
+    background-image url(/public/icon__arrow-down.svg) 
+    width 20px
+    height 20px
 
+// not working
+.prose ul 
+    margin-bottom 50px
+    list-style-image url(/public/icon__forward.svg) 
+    li
+        margin 0
 </style>

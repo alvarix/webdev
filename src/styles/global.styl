@@ -74,6 +74,7 @@ Xbody:has(#contact),
 .prose h2,
 h2 
 	font-size: 2.5rem
+	margin-bottom .5rem
 
 
 .prose h3,
@@ -109,15 +110,14 @@ code
 		Courier New,
 		monospace
 
-
-nav.big a 
+nav.big a {
+    border-radius: 15px
+    transition: all 200ms linear
 	font-weight: 700
-	padding: 25px !important
+	padding: 25px 
 	font-size: 28px
 	display: block
-    transition: all 200ms linear
-    border-radius: var(--rounder)
-
+}
 
 nav.big a:hover 
 	background-color: #000
@@ -136,10 +136,10 @@ nav.big a:hover
 	font-size: inherit
 	opacity .85
 	transition ease-in-out 200ms
+
 .ext-link:hover::after
 		opacity 1
 		transform: scale(1.2)
-
 
 footer .ext-link::after 
 	background: none
@@ -148,11 +148,10 @@ footer .ext-link::after
 nav.big li:nth-child(2) a 
 	color: var(--color-case-studies)
 
-
-nav.big li:nth-child(2) a:hover 
+nav.big li:nth-child(2) a:hover {
 	background-color: var(--color-case-studies)
  	color: white
-
+}
 
 nav.big li:nth-child(3) a 
 	color: var(--color-bio)
@@ -185,14 +184,15 @@ nav.big li:nth-child(4) a:hover
 .prose li::marker 
 	color: currentColor
 
-
-
 a 
 	text-decoration: underline
-
 
 a:hover,
 a.effect,
 #header a, 
 body nav a 
 	text-decoration: none
+
+
+.prose p
+	text-wrap balance
