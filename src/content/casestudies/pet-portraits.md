@@ -1,5 +1,5 @@
 ---
-title: "PetPortraits.ink"
+title: "Pet Portraits.ink"
 cover: "../../assets/pp2.png"
 coverAlt: "Image of storefront hero"
 description: "A Portfolio WordPress Theme using Blocks"

@@ -49,7 +49,7 @@ const cover = entry.data.cover;
       <h1>{entry.data.title}</h1>
       
       {entry.data.tags && (
-      <ul class='tags flex gap-2 list-none pl-0'>
+      <ul class='tags flex flex-wrap gap-2 list-none pl-0'>
           {entry.data.tags.map((tag) => (<li>{tag}</li> ))}
       </ul>
       )}
@@ -97,7 +97,12 @@ const cover = entry.data.cover;
       color #777
       Xfont-style italic
       text-transform lowercase
-  
+      overflow-wrap: none
+      word-break: break-word
+      line-height 1
+      @media screen and (max-width: 400px) 
+        margin 3px 0
+      
   .control.prose 
     max-width 45rem
   
