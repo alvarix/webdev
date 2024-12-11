@@ -148,6 +148,7 @@ body
           
 
 .nav-links
+  z-index 999
   width 100vw
   height 100vh
   position absolute
@@ -160,10 +161,8 @@ body
   margin 0
   opacity 0
   transition opacity 0.3s ease
-  pointer-events none
   .active 
     color white
-    pointer-events none
     &.case-studies
       background-color var(--color-case-studies)
     &.bio
@@ -172,7 +171,6 @@ body
       background-color var(--color-contact)
   &.expanded
     display unset
-    pointer-events: auto; 
   a
     display block
     text-decoration none

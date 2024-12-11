@@ -68,9 +68,10 @@ const cover = entry.data.cover;
 </Layout>
 
 <style define:vars={{bgColor}} lang="styl">
-  control
-    overflow-wrap: break-word; 
- 
+  p, h1, h2, h3, span, div, a 
+    overflow-wrap: break-word;
+    word-break: break-word;
+  
   .hero
     Xbackground var(--bgColor)
     &:hover 

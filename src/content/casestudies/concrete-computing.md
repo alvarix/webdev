@@ -9,7 +9,7 @@ order: 9
 draft: false
 ---
 
-### [concretecomputing.com](https://concretecomputing.com)
+### [Concrete Computing website](https://concretecomputing.com)
 
 The bried was to realign this website that was on GoDaddy's default Go theme.  
 I created a child theme and tweaked the design to be simple but sophisticated, reflecting Matt Morgan's easy manner and professional results.  

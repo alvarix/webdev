@@ -9,7 +9,7 @@ color: "#FEC97A"
 order: 8
 draft: false
 ---
-### [PetPortraits.ink](https://petportraits.ink)
+### [Pet Portraits.ink](https://petportraits.ink)
 
 ## A Portfolio WordPress Block Theme
 Coding is just for fun, my real job is as a Pet Portrait artist.  
