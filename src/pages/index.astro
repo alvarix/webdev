@@ -29,8 +29,11 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style lang="styl">	
-nav a 
-	width 20rem
+nav a 	
+	width 100%
+	@media screen and (min-width: 767px) 
+		width 20rem
+
 
 /* Stylus gremlins */
 .hover-slide-text {
