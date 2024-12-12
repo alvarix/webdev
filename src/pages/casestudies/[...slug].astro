@@ -74,12 +74,14 @@ const cover = entry.data.cover;
   
   .hero
     Xbackground var(--bgColor)
+    display none
+    filter: blur(4px);
+    transition all 400 ease-in-out
     &:hover 
-      filter: blur(.75px) !important;
-      cursor crosshair
+      cursor not-allowed
     img 
       width 100%
-      mask-image: linear-gradient(180deg, transparent, #fff 14%);
+      Xmask-image: linear-gradient(180deg, transparent, #fff 14%);
 
   
   a.effect 

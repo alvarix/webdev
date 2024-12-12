@@ -42,11 +42,11 @@ const addClassToAnchorsInHeaders = (addClassName) => {
 
 const toggleElBlur = (element) => {
   const el = document.querySelector(element);
+  el.style.display='block';
 
   if (el) {
     el.style.filter='blur(10px)';
     setTimeout(() => {
-      el.style.transition='filter 1s ease-in-out'; 
       el.style.filter='blur(0px)';
     }, "200");
   }
