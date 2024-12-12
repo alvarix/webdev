@@ -26,6 +26,10 @@ I added the following editable features:
 - testimonials 
 - a bold CTA
 
+---
 
+##### Call to Action:
 ![Design detail](../../assets/cc-int-3.webp)
+
+##### Blog
 ![Design detail](../../assets/cc-int-1.webp)

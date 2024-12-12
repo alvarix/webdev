@@ -19,17 +19,16 @@ We get to build these little ingenius systems.
 
 ### Colophon
 This site was created with [**Astro JS 4**](https://astro.build/)  
-What it offered:  
+Most of the transitions are using the new [View Transitions API](https://developer.chrome.com/docs/web-platform/view-transitions) which allows connect to be animated from one page to the next.
+
+Soome of what I loved:  
 - Component based architecture
-- Server side JS with optional client side  
-- View Transitions API
-- Jamstack
-  - Content-driven development
-  - Performance benefits
-  - Static yet dynamic
+- Server side statically rendered JavaScript with optional client side 
+- View Transitions interface 
+- Content-driven development
 - Content
   - Collections 
-  - file-based routing 
+  - File-based routing 
   - MarkDown
 
 
