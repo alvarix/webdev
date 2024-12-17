@@ -7,14 +7,14 @@ import Layout from '../layouts/Layout.astro';
 	
 	<div class="page flex flex-col md:flex-row  gap-8 leading-loose control">
 		<section class="hero max-w-prose text-balance ">
-			<h1 class="text-4xl leading-normal mb-2 hover-slide-text">
+			<h1 class="text-4xl leading-normal hover-slide-text">
 				I'm Alvar Sirlin, <br/>
-				a Front End Web Developer.
+				a Front End Web Developer
 			</h1>
 			<p class="text-balance w-full md:w-10/12 text-lg">
-				...with over two decades of experience in the field.<br><br>
-				I specialize in web design and development with a zen for fundamentals: <strong>solid HTML and CSS</strong>. <br>
-                And a yen for JavaScript.
+				with over two decades of experience in the field.<br><br>
+				I have a core understanding of HTML and CSS,  experience with a variety CMS and frameworks
+				and a strong belief in simplicity and usability.
 			</p>
 		</section>
 		<nav class="md:mt-16 big">
@@ -38,6 +38,10 @@ nav a
 /* Stylus gremlins */
 .hover-slide-text {
     margin-left: -15px;
+}
+
+h1 + p {
+	margin-top: -0px;
 }
 
 .hover-slide-text 

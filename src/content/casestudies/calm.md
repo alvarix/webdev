@@ -2,7 +2,7 @@
 title: "Calm Store"
 cover: "../../assets/hero-calm.webp"
 coverAlt: "Image of storefront hero"
-description: "Portfolio WordPress Theme using Blocks"
+description: "A Shopify theme in Vue"
 tags: ["shopify","vue", "tailwind"]
 date: 2022-06-01
 color: "#ccc"
@@ -10,39 +10,38 @@ order: 2
 draft: false
 ---
 
-## A Shopify Theme in Vue
+## The brief
 
-Working at Roswell Studios during the pandemic the company's focus was to transition their Shopify base theme to a Vue architecture to promote organization and modularity.
+Working at Roswell Studios during the pandemic the company's focus was to transition their Shopify base theme to a Vue architecture to promote modularity and enhance performance.
 
+As part of the development team I would pick up tickets to work on website features.  
+These features were design implementation or functionality customizations that extended the  Roswell base Shopify theme to meet the client's brand and needs.  
+
+The ubiquitous Calm app had a store at that time and hired Roswell to build it.  
+The ticket that I picked was to create and Image Or Video component with an optional overlay of header, paragraph and button. 
+There were also options in the Shopify customizer to set auto playback, mute, poster and alternative mobile assets.
+
+
+## The solution
 It was my first taste of Vue and modern front end JavaScript.  
-It was difficult to pickup, coming from jQuery which made JS more like a behavioral extension of CSS. 
+I admit it was difficult to pickup.  
+Previously my JavaScript experience was mostly jQuery which had a lot more in common with CSS than a backend language in my opinion.
 
-I've often pondered how Front End has bloomed from relative simplicity of HTML/CSS/jQuery to an insanely complex JavScript eco-system. I'm looking for my place in the **Middle of the Front End*, as examined by [Brad Frost](https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/) and [Chris Coyier](https://css-tricks.com/the-great-divide/) among others.  
-With gratitude!  
-The magic of this new paradigm has reignited my love of web development <3.
+In the last few decades front end development has bloomed from the simplicity of HTML and CSS into an insanely complex JavScript ecosystem. 
+I used to think like many others that the cost is too high  - more time spent on tooling than building.  
+But as I get more experience it's hard not to be taken with the magic of these frameworks.
 
-#### Vue takeaways 
-
-1. ##### Single File Component structure 
-    The template, script, and styles are clearly separated yet scoped within the same file.
-1. ##### Dynamic Behavior
-    The component manages different media types (videos and images) for both desktop and mobile devices. 
-2. ##### Two way interactions 
-    @click directives trigger methods (playVideoForeground and playVideoForegroundMobile) to update the state dynamically.
-3. ##### Props for Customization
-    `videoUrl`, `img`, and `overlayTitle` pass Shopify user customizer options to Vue.
-4. ##### Lifecycle Hooks
-    The mounted lifecycle hook is used to set up an observer for the video elements.  
-
-### img-vid-overlay.vue
 ![screenshot of Vue code](../../assets/calm-inline.png "gratuitous code screenshot :)")
 
-One of the components I created was an image/video player an optional overlay HTML.
+Using Vue 3 with the options API some concepts I learned were 
+1. ##### Single file component structure 
+    The template, script, and styles are clearly separated yet scoped within the same file.
+2. ##### Two way interactions 
+    @click directives trigger methods (playVideoForeground and playVideoForegroundMobile) updated the state dynamically.
+3. ##### Props for customization
+    `videoUrl`, `img`, and `overlayTitle` pass Shopify user customizer options to Vue.
+4. ##### Lifecycle hooks
+    The mounted lifecycle hook is used to set up an observer for the video elements.  
 
-#### Component features:
-- editable title and subtitle  (Shopify Customizer)
-- optional poster image for video (Shopify Customizer)
-- color picker for text  (Shopify Customizer)
-- optional mobile version of image/video  (Shopify Customizer)
-- custom inline SVG play button
+
 

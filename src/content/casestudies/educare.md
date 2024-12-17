@@ -1,50 +1,43 @@
 ---
 title: "Educare Microsite"
 cover: ../../assets/eln.webp
-description: "Quiz Based Resource Library Sorting"
-tags: ["WordPress","Accessibility","Gravity Forms","PHP", "JavaScript"]
+description: "A Quiz engine built on WordPress and Gravity Forms"
+tags: ["WordPress","Accessibility","Gravity Forms","PHP", "JavaScript", "Bricks Builder"]
 date: 2024-08-13
 color: "#fffbf3"
 order: 9
 draft: false
 ---
 
-### [Educare Quiz Website](https://familyleadership.educareschools.org/)
-
-Web app that I built for my longtime collaborator *Serendipity Creative* studio based on their design.  
+#### [Educare Quiz Website](https://familyleadership.educareschools.org/)
 
 
-### The Brief
-Create a paginated quiz with categorized questions.  
-On submission show a Results page with global and per category scores, blurbs and images.  
-Link to the Results page a Recommended resources page.  
-This page displays posts per category filtered by quiz scores (see image below).  
-Scores can also be toggled to change the query per section.
+## The brief
+In addition to a website the client requested a quiz with some special features.
+That it be paginated and categorized, and that it would guide the user through their results per category, and then recommendations based on those results. 
 
-Other requirements:
-- bookmarkable results
-- PDF download of results
-- WYSIWIG content/style editor
+This site was designed by and built for my long time collaborator, *Serendipity Creative*.  
+
 
 ![screenshot of Results interface](../../assets/eln-inline-1.webp)
 ---
 
-### Approach
+### The solution
 
 
-Gravity Forms has a Quiz add-on that could handle pagination but could not categorize questions.   
-I started digging into how to bolt on categories.  
-I found in Gravity Forms Quiz configuration that you can setup the results page as a simple query string to hand off to custom code.  
-By labeling each questions key with the category as value I was able to provide the app with the necessary data.  
-Eg: `?cat1=10&cat1=20&cat2=20...`
+Gravity Forms is a popular WordPress plugin for building and managing forms.  
+It has a Quiz add-on that I started to investigate.  
+It could handle pagination but not categories nor provide any templating for working with results data.
 
-Having the results in a key/value pair allowed me to execute the following in PHP:
- 1. Calculate overall and category scores 
- 1. Combine the scores array with the post type categories array
- 1. Retreive posts filtered by the category scores
- 1. Dynamically create second query string to return the *Recommendations* 
- 1. Rewrite the query string client-side for bookmarkability 
+Since it satisfied a decent amount of the requirement I started looking into adding other features.
 
+I found in settings that the results page configuration had an option to output a customizable query string.  
+I realized this would facilitate meeting the other requirements. 
 
+By labeling each question key with the category I was able to handoff the data to my PHP templates.  
+`?cat1=10&cat1=20&cat2=20...`  
+The downside was that the app would be slightly brittle - if any questions change the categories would have to be updated in the query string output, not on the question admin itself.  
+Given the budget and timeline and lifecycle it was deemed a good trade-off.
 
-
+Taking the output of the quiz and crunching scores and queries was a lot of fun.  
+The client was very pleased and has reported a large uptick in engagement.
