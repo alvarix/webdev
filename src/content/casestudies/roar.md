@@ -17,7 +17,7 @@ This site was built for my long time collaborator, *Serendipity Creative*.
 
 ## The solution
 I’m not a fan of WordPress builders.  
-This client had previously been using Divi which I was none too please about.  
+This client had previously been using Divi which I was none too pleased about.  
 They also came to realize the debt Divi caused and we decided to find something better.
 We settled on Bricks Builder was a beta plugin at the time with a more developer friendly ethos.
 
