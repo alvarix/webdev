@@ -19,7 +19,7 @@ That it be paginated and categorized, and that it would guide the user through t
 This site was designed by and built for my long time collaborator, *Serendipity Creative*.  
 
 
-![screenshot of Results interface](../../assets/eln-inline-1.webp)
+![screenshot of Results interface](../../assets/eln-inline-3.webp)
 ---
 
 ### The solution

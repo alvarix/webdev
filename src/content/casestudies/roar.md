@@ -26,6 +26,8 @@ One example of how this builder helped development:
 the Resources post type [**category archive**](https://roarcenter.org/topic-area/emergency-needs/) page was designed to display a tabbed layout of sub categories.
 
 
+![screenshot of Bricks Builder interface](../../assets/roar-inline-2.webp )
+
 Normally in a situation like this a shortcode would be injected, replacing the builder for that component.  
 As I played with *Pro Tabs from Bricks Extras* I found I was able to set the tabs titles **parent** and contents **child** to the main query term_ID and render this semi-complex UI directly within the builder tools, losing zero Bricks functionality.
 

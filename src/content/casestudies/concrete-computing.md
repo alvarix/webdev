@@ -26,4 +26,4 @@ I chose a colorful but muted business blue as the main color, with purple and te
 
 For the blog page I let the blue of the header expand over the whole body – a change of tone to help transition to the change in content. 
 
-![Design detail](../../assets/cc-int-1.webp)
+![Design detail](../../assets/cc-int-5.webp)
