@@ -25,7 +25,7 @@ Some of it's attributes were an overlay of content (header, paragraph, button), 
 ## The solution
 It was my first taste of Vue and modern front end JavaScript.  
 I admit it was difficult to pickup.  
-Previously my JavaScript experience was mostly jQuery which had a lot more in common with CSS than a backend language in my opinion.
+Previously my JavaScript experience was mostly jQuery which had a lot more in common with CSS than Node.
 
 In the last few decades front end development has bloomed from the simplicity of HTML and CSS into an insanely complex JavScript ecosystem. 
 I used to think like many others that the cost is too high  - more time spent on tooling than building.  
