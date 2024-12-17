@@ -10,7 +10,7 @@ order: 9
 
 
 ## The brief
-To build out a medium/large highly bespoke website using a WordPress builder for ease of modification by non-technical administrators, but also wouldn't hamper performance or development.  
+To build out a medium sized highly bespoke website using a WordPress builder for modification by non-technical administrators, but that also minimized performance and development hits.  
 
 This site was built for my long time collaborator, *Serendipity Creative*.  
 

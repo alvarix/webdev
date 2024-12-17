@@ -15,10 +15,10 @@ draft: false
 Working at Roswell Studios during the pandemic the company's focus was to transition their Shopify base theme to a Vue architecture to promote modularity and enhance performance.
 
 As part of the development team I picked up tickets to work on features.  
-These features were design implementations or functionality customizations that extended the  Roswell base Shopify theme to meet the client's brand needs.  
+These features were design implementations or functionality customizations that extended the  Roswell base Shopify theme.  
 
-The ubiquitous Calm app had a store at that time and hired Roswell to build it.  
-The ticket that I picked was to create an *Image or Video* component. 
+The ubiquitous Calm app had a store at that time and hired Roswell to design and build it.  
+The ticket that I picked was to create an *Image or Video* vue component. 
 Some of it's attributes were an overlay of content (header, paragraph, button), set auto playback, mute, loop, set poster image and to swap alternative mobile assets.
 
 
