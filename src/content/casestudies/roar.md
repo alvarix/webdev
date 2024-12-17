@@ -18,8 +18,8 @@ This site was built for my long time collaborator, *Serendipity Creative*.
 ## The solution
 I’m not a fan of WordPress builders.  
 This client had previously been using Divi which I was none too pleased about.  
-They also came to realize the debt Divi caused and we decided to find something better.
-We settled on Bricks Builder was a beta plugin at the time with a more developer friendly ethos.
+They also came to realize the debt Divi incurred and we decided to find something better.
+We settled on Bricks Builder which was a beta plugin at the time.
 
 ### Clever queries in tabs
 One example of how this builder helped development:
