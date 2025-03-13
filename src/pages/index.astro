@@ -6,12 +6,25 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Alvar Sirlin, Front End Dev" section="" bgColor="">
 	
-	<div class="page flex flex-col md:flex-row  justify-around gap-8 leading-loose control">
-		<section class="hero max-w-prose text-balance ">
+	<div class="page w-full flex flex-col md:flex-row  justify-around gap-8 leading-loose control">
+		<section class="w-8/12 hero max-w-prose text-balance ">
 			<h1 class="text-4xl leading-normal hover-slide-text">
 				<strong>Alvar Sirlin</strong> | 
 				Front End Engineer
 			</h1>
+			<p
+            id="typewriter"
+            class="text-6xl  Xfont-medium ">
+            <!-- The text will be inserted here by JavaScript -->
+          </p>
+		  <div id="fade-element" style="opacity: 0;">
+			<form method="POST" id="form" class="mt-8 grow">
+                <input type="hidden" name="access_key" value="5b8a7ead-cd3f-40d5-a6c8-c005dd0ee74a">
+                <input type="email" name="email" placeholder="Enter email" required>
+                <div id="result"></div>
+            </form>
+		  </div>
+
 			<!--
 			<ul class="flex-col w-full md:w-10/12 text-lg">
 
@@ -35,8 +48,102 @@ import Layout from '../layouts/Layout.astro';
 		</nav>
 	</div>
 </Layout>
+<script is:inline>
+const form = document.getElementById('form');
+const result = document.getElementById('result');
 
+form.addEventListener('submit', function(e) {
+	const formData = new FormData(form);
+	e.preventDefault();
+
+	const object = Object.fromEntries(formData);
+	const json = JSON.stringify(object);
+
+	result.innerHTML = "Please wait..."
+
+	fetch('https://api.web3forms.com/submit', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'Accept': 'application/json'
+			},
+			body: json
+		})
+		.then(async (response) => {
+			let json = await response.json();
+			if (response.status == 200) {
+				result.innerHTML = json.message;
+			} else {
+				console.log(response);
+				result.innerHTML = json.message;
+			}
+		})
+		.catch(error => {
+			console.log(error);
+			result.innerHTML = "Something went wrong!";
+		})
+		.then(function() {
+			form.reset();
+			setTimeout(() => {
+				result.style.display = "none";
+			}, 3000);
+		});
+});
+</script>  
+<script type="module">
+//const textArray = ["Customized.", "Performant.", "Responsive."];
+const textArray = ["codename: Cuttlefish", "env: Disruption", "init: Contact"];
+const typewriter = document.getElementById("typewriter");
+const fadeTarget = document.getElementById("fade-element"); // Element to fade up
+let wordIndex = 0;
+let charIndex = 0;
+let minSpeed = 20;  // Minimum speed for the fastest part
+let maxSpeed = 150; // Maximum speed for the slowest part
+
+function getEasedDelay(progress) {
+  return maxSpeed - (maxSpeed - minSpeed) * Math.pow(progress, 2);
+}
+
+function typeWrite() {
+  if (wordIndex < textArray.length) {
+    if (charIndex < textArray[wordIndex].length) {
+      typewriter.innerHTML += textArray[wordIndex].charAt(charIndex);
+      let progress = charIndex / textArray[wordIndex].length;
+      charIndex++;
+      setTimeout(typeWrite, getEasedDelay(1 - progress)); // Reverse easing
+    } else {
+      typewriter.innerHTML += "<br>"; // Insert break between words
+      charIndex = 0;
+      wordIndex++;
+      setTimeout(typeWrite, 400); // Pause before the next word
+    }
+  } else {
+    setTimeout(fadeUpElement, 500); // Slight delay before fade-up
+  }
+}
+
+function fadeUpElement() {
+  fadeTarget.style.opacity = "0"; 
+  fadeTarget.style.transform = "translateY(20px)";
+  fadeTarget.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+  
+  // Delay execution to allow styles to apply before transition starts
+  requestAnimationFrame(() => {
+    fadeTarget.style.opacity = "1";
+    fadeTarget.style.transform = "translateY(0)";
+  });
+}
+
+typeWrite();
+</script>
 <style lang="styl">	
+#form input 
+	background transparent
+	border-bottom 1px solid #000
+	font-size	36px
+	color #000
+	&::placeholder
+		color #000
 
 nav.big li:nth-child(2) a 
 	color: var(--color-case-studies)
