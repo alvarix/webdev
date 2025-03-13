@@ -91,8 +91,7 @@ form.addEventListener('submit', function(e) {
 });
 </script>  
 <script type="module">
-//const textArray = ["Customized.", "Performant.", "Responsive."];
-const textArray = ["codename: Cuttlefish", "env: Disruption", "init: Contact"];
+const textArray = ["Customized.", "Performant.", "Responsive."];
 const typewriter = document.getElementById("typewriter");
 const fadeTarget = document.getElementById("fade-element"); // Element to fade up
 let wordIndex = 0;
@@ -126,15 +125,23 @@ function fadeUpElement() {
   fadeTarget.style.opacity = "0"; 
   fadeTarget.style.transform = "translateY(20px)";
   fadeTarget.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-  
-  // Delay execution to allow styles to apply before transition starts
+
   requestAnimationFrame(() => {
     fadeTarget.style.opacity = "1";
     fadeTarget.style.transform = "translateY(0)";
   });
 }
 
-typeWrite();
+// Check sessionStorage to determine if animation should run
+if (!sessionStorage.getItem("animationPlayed")) {
+  sessionStorage.setItem("animationPlayed", "true"); // Mark as played
+  typeWrite();
+} else {
+  // Instantly show content if animation was already played
+  typewriter.innerHTML = textArray.join("<br>");
+  fadeTarget.style.opacity = "1";
+  fadeTarget.style.transform = "translateY(0)";
+}
 </script>
 <style lang="styl">	
 #form input 
