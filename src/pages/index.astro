@@ -1,23 +1,31 @@
 ---
+import CaseStudy from '../components/CaseStudy.astro';
 import Layout from '../layouts/Layout.astro';
 
 ---
 
 <Layout title="Alvar Sirlin, Front End Dev" section="" bgColor="">
 	
-	<div class="page flex flex-col md:flex-row  gap-8 leading-loose control">
+	<div class="page flex flex-col md:flex-row  justify-around gap-8 leading-loose control">
 		<section class="hero max-w-prose text-balance ">
 			<h1 class="text-4xl leading-normal hover-slide-text">
-				I'm Alvar Sirlin, <br/>
-				a Front End Web Developer
+				<strong>Alvar Sirlin</strong> | 
+				Front End Engineer
 			</h1>
-			<p class="text-balance w-full md:w-10/12 text-lg">
-				with over two decades of experience in the field.<br><br>
-				I have a core understanding of HTML and CSS,  experience with a variety CMS and frameworks
-				and a strong belief in simplicity and usability.
-			</p>
+			<!--
+			<ul class="flex-col w-full md:w-10/12 text-lg">
+
+				<li class="flex justify-between">codename: <strong>Cuttlefish</strong> </li>
+				<li class="flex justify-between">status: <strong>Navigating disruption</strong> </li>
+				<li class="flex justify-between">outlook: <strong>Seeking</strong> </li>
+				<li class="flex justify-between">opportunity: <strong>Cross Sector</strong></li> 
+				With the current shakeup in tech I've been exploring Front End tooling landscape to build highly customized and performant websites with quick iteration. 
+-->	
+			
+			</ul>
+			<CaseStudy />
 		</section>
-		<nav class="md:mt-16 big">
+		<nav class="md:Xmt-16 big">
 			<ul>
 				<li><a class="hidden" href="/">Home</a></li>
 				<li><a transition:name='cs' href="/casestudies">Case Studies</a></li>
@@ -29,6 +37,53 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <style lang="styl">	
+
+nav.big li:nth-child(2) a 
+	color: var(--color-case-studies)
+	&:hover 
+		background-color: var(--color-case-studies)
+	 	color: white
+
+nav.big li:nth-child(3) a 
+	color: var(--color-bio)
+
+nav.big li:nth-child(3) a:hover 
+	background-color: var(--color-bio)
+	color: white
+
+nav li:nth-child(4) a 
+	color: var(--color-contact)
+
+
+nav.big li:nth-child(4) a:hover 
+	background-color: var(--color-contact)
+	color: white
+
+
+footer 
+	border-top 1px solid #fff
+
+html 
+	background-color #333;
+	background-image: linear-gradient(135deg, #f34f76, #FF3103);
+	background-image: linear-gradient(135deg, #ff8a00, #e52e71);
+	background-size: 400% 400%;
+	height: 200%;
+	width: 100%;
+	color: #fff;
+	animation gradient 10s ease infinite
+
+@keyframes gradient 
+	0% 
+	background-position: 51% 0%;
+
+	50% 
+	background-position: 50% 100%;
+
+	100% 
+	background-position: 51% 0%;
+
+
 nav a 	
 	width 100%
 	@media screen and (min-width: 767px) 
