@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+// Example: Filter out content entries with `draft: true` only when building for production
+const posts = await getCollection('casestudies', ({ data }) => {
+  return import.meta.env.PROD ? data.draft !== true : true;
+});
+console.log(posts);
+const post = posts.splice(Math.floor(Math.random()*posts.length),1);
+---
+<div key={post.slug} class="flex gap-8 md:gap-28">
+    <div>
+      
+    <h2><a class='effect' href={`/casestudies/${post.slug}`}>
+      {post.title}
+    </a></h2>
+    <p>{post.description}</p>
+    </div>
+    <div>
+
+    {post.cover && <Image transition:name=`thumb-${post.slug}` class="thumb" src={post.cover} alt="" />}
+    </div>
+</div>
