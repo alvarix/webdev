@@ -16,12 +16,12 @@ const { title, section, bgColor  } = Astro.props;
 const getPageName = () => {
   return Astro.params?.slug || Astro.url.pathname.split('/').filter(Boolean).pop();
 };
-
+const page = getPageName() || 'home';
 
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class={page}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Alvar Sirlin" />
